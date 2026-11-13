@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Settings — Lumora Events</title>
+  <meta name="description" content="System configuration, brand tokens, and administrative controls.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            plum: { DEFAULT: '#56334F', 50: '#F9F4F8', 500: '#56334F', 600: '#472841' },
+            gold: { DEFAULT: '#D6B887', 500: '#D6B887', 600: '#C29F68' },
+            brand: { dark: '#17151A', cardDark: '#221E26', borderDark: '#352E3C', light: '#FAF8F5' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+
+  <!-- ADMIN SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
+  <aside id="adminSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
+    
+    <div>
+      <!-- Top Brand Logo & Mobile Close (X) Button -->
+      <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-gray-800">
+        <a href="admin-dashboard.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#56334F] flex items-center justify-center p-1.5 shadow-sm">
+            <img src="assets/logo/logo-mark.svg" alt="Lumora" class="w-full h-full">
+          </div>
+          <div>
+            <span class="font-serif text-lg font-bold tracking-wider text-[#56334F] dark:text-[#FAF8F5]">LUMORA</span>
+            <span class="block text-[7px] font-bold text-[#D6B887] tracking-[0.25em] uppercase">ADMIN CONTROL</span>
+          </div>
+        </a>
+        <button type="button" class="mobile-sidebar-close lg:hidden p-2 rounded-xl text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Close sidebar">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mt-6 space-y-1 text-xs font-semibold">
+        <a href="admin-dashboard.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="admin-analytics.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+          <span>Analytics</span>
+        </a>
+        <a href="admin-users.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Users</span>
+        </a>
+        <a href="admin-events.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Events</span>
+        </a>
+        <a href="admin-bookings.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="file-check" class="w-4 h-4"></i>
+          <span>Bookings & Orders</span>
+        </a>
+        <a href="admin-packages.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="package" class="w-4 h-4"></i>
+          <span>Packages & Themes</span>
+        </a>
+        <a href="admin-messages.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>Messages</span>
+        </a>
+        <a href="admin-payments.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+          <span>Payments Ledger</span>
+        </a>
+        <a href="admin-settings.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl bg-purple-50 dark:bg-purple-950/60 text-[#56334F] dark:text-[#D6B887]">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Utility Bar: Dual Swap (RTL ⇄) & View Mode (Theme ☼/☾) Buttons + View Public Site (Mobile Drawer Only) -->
+    <div class="lg:hidden pt-5 border-t border-gray-100 dark:border-gray-800 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Preferences</span>
+        <div class="flex items-center gap-2.5">
+          <!-- Swap (RTL ⇄) Circular Button -->
+          <button type="button" onclick="window.toggleRTL()" class="rtl-toggle-btn w-9 h-9 rounded-full border-2 border-[#D6B887] bg-white/5 dark:bg-white/5 hover:bg-[#D6B887]/15 flex items-center justify-center text-[#D6B887] transition-all shadow-sm active:scale-95" title="Swap Direction (RTL / LTR)" aria-label="Swap Direction">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <!-- View Mode (Theme ☼/☾) Circular Button -->
+          <button type="button" onclick="window.toggleTheme()" class="theme-toggle-btn w-9 h-9 rounded-full bg-[#D6B887] hover:bg-[#FAF0DC] flex items-center justify-center text-[#17151A] transition-all shadow-md shadow-[#D6B887]/30 active:scale-95" title="Toggle Theme (View Mode)" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+            <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- View Public Site Button -->
+      <a href="index.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:text-[#56334F] dark:text-gray-300 dark:hover:text-[#D6B887] hover:bg-gray-50 dark:hover:bg-gray-800/60 transition-colors">
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span>View Public Site</span>
+      </a>
+    </div>
+
+    <!-- Bottom User Strip -->
+    <div class="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Admin" class="w-9 h-9 rounded-full object-cover border border-[#D6B887]">
+        <div class="overflow-hidden">
+          <h4 class="text-xs font-bold text-[#17151A] dark:text-[#FAF8F5] truncate">Alexander Vance</h4>
+          <span class="text-[11px] text-[#D6B887]">Managing Director</span>
+        </div>
+      </div>
+      
+      <button type="button" onclick="logoutUser()" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 flex items-center justify-center lg:justify-start gap-2 border border-rose-200/60 dark:border-rose-900/40 lg:border-transparent transition-colors">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Sign Out</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <div id="adminSidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
+
+  <!-- Content -->
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+    
+    <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
+        <button id="adminSidebarToggleBtn" class="lg:hidden p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 shrink-0" aria-label="Toggle Navigation">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <div class="min-w-0 flex-1">
+          <h1 class="text-sm sm:text-lg font-bold font-serif truncate">System & Atelier Settings</h1>
+          <p class="hidden sm:block text-xs text-gray-500 dark:text-gray-400 truncate">Business identity, financial policies, automated client dispatch, and data exports</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-600 dark:text-gray-300 hover:text-[#56334F] dark:hover:text-[#D6B887] px-3.5 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>View Public Site</span>
+        </a>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-[#D6B887]" title="Toggle Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+        </button>
+
+        <!-- RTL Toggle -->
+        <button class="rtl-toggle-btn px-2.5 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-semibold text-gray-700 dark:text-[#D6B887]" title="Toggle RTL" aria-label="Toggle RTL">
+          <span class="rtl-label">RTL</span>
+        </button>
+      </div></header>
+
+    <main class="flex-1 p-6 sm:p-10 space-y-8 max-w-5xl w-full max-w-full overflow-x-hidden">
+      
+      <!-- 1. Atelier Profile & Concierge Details -->
+      <form onsubmit="event.preventDefault(); showToast('Atelier business profile saved successfully!', 'success');" class="bg-white dark:bg-[#221E26] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
+        <div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-4">
+          <div>
+            <h3 class="font-serif text-lg font-bold flex items-center gap-2">
+              <i data-lucide="building-2" class="w-5 h-5 text-[#D6B887]"></i>
+              <span>Atelier Profile & Concierge Contact</span>
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Official business details displayed on proposals, invoices, and client confirmations</p>
+          </div>
+          <span class="hidden sm:inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+            Verified Atelier
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs">
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Company Legal / Brand Name</label>
+            <input type="text" value="Lumora Events Atelier LLC" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Concierge Inquiry Email</label>
+            <input type="email" value="concierge@lumora.events" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">VIP Direct Hotline</label>
+            <input type="text" value="+1 (800) 586-6721" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Operating Hours</label>
+            <input type="text" value="Mon – Sat: 9:00 AM – 7:00 PM PST" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Studio Flagship Address</label>
+            <input type="text" value="100 Ocean Avenue, Suite 400, Santa Monica, CA 90401, United States" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Brand Tagline</label>
+            <input type="text" value="Where Life's Grandest Milestones Meet Haute Scenography" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+          </div>
+        </div>
+
+        <!-- Brand Color Badges -->
+        <div class="pt-2">
+          <label class="block font-bold mb-2 text-xs text-gray-700 dark:text-gray-300">Design System Palette</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="flex items-center gap-2.5 p-2 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+              <span class="w-6 h-6 rounded-lg bg-[#56334F] shrink-0 border border-black/20"></span>
+              <div class="overflow-hidden">
+                <span class="block text-[11px] font-bold truncate">#56334F</span>
+                <span class="block text-[10px] text-gray-400 truncate">Deep Plum</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+              <span class="w-6 h-6 rounded-lg bg-[#D6B887] shrink-0 border border-black/20"></span>
+              <div class="overflow-hidden">
+                <span class="block text-[11px] font-bold truncate">#D6B887</span>
+                <span class="block text-[10px] text-gray-400 truncate">Champagne Gold</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+              <span class="w-6 h-6 rounded-lg bg-[#17151A] shrink-0 border border-gray-600"></span>
+              <div class="overflow-hidden">
+                <span class="block text-[11px] font-bold truncate">#17151A</span>
+                <span class="block text-[10px] text-gray-400 truncate">Obsidian Night</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+              <span class="w-6 h-6 rounded-lg bg-[#FAF8F5] shrink-0 border border-gray-300"></span>
+              <div class="overflow-hidden">
+                <span class="block text-[11px] font-bold truncate">#FAF8F5</span>
+                <span class="block text-[10px] text-gray-400 truncate">Silk Ivory</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button type="submit" class="btn-primary text-xs py-2.5 px-6 flex items-center gap-2">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Save Atelier Profile</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 2. Booking Policies & Financial Operational Terms -->
+      <form onsubmit="event.preventDefault(); showToast('Booking & financial policies updated!', 'success');" class="bg-white dark:bg-[#221E26] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
+        <div class="border-b border-gray-100 dark:border-gray-800 pb-4">
+          <h3 class="font-serif text-lg font-bold flex items-center gap-2">
+            <i data-lucide="scale" class="w-5 h-5 text-[#D6B887]"></i>
+            <span>Booking Policies & Financial Terms</span>
+          </h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Configure default currency, advance booking notice, retainer schedules, and tax rules</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-xs">
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Operating Currency</label>
+            <select class="luxury-select w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">
+              <option value="USD" selected>USD ($) — US Dollar</option>
+              <option value="EUR">EUR (€) — Euro</option>
+              <option value="GBP">GBP (£) — British Pound</option>
+              <option value="AED">AED (د.إ) — UAE Dirham</option>
+              <option value="CHF">CHF (Fr) — Swiss Franc</option>
+              <option value="SGD">SGD (S$) — Singapore Dollar</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Minimum Advance Notice</label>
+            <select class="luxury-select w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">
+              <option value="14" selected>14 Days Prior (Standard)</option>
+              <option value="21">21 Days Prior (Recommended)</option>
+              <option value="30">30 Days Prior (Destination)</option>
+              <option value="7">7 Days Prior (Express Fee Applies)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Confirmation Deposit Retainer</label>
+            <select class="luxury-select w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">
+              <option value="50" selected>50% upon Contract Signing</option>
+              <option value="30">30% Initial Deposit</option>
+              <option value="40">40% Initial Deposit</option>
+              <option value="100">100% Full Payment Upfront</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Hospitality & Regional Tax</label>
+            <div class="relative">
+              <input type="number" step="0.1" value="8.5" class="w-full p-3 pr-8 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-[#D6B887]">
+              <span class="absolute right-3 top-3 text-xs text-gray-400 font-bold">%</span>
+            </div>
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Base Event Duration</label>
+            <select class="luxury-select w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">
+              <option value="6" selected>6 Hours Standard Execution</option>
+              <option value="4">4 Hours Intimate Celebration</option>
+              <option value="8">8 Hours Grand Gala Execution</option>
+              <option value="12">12 Hours Full-Day Estate Buyout</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold mb-1.5 text-gray-700 dark:text-gray-300">Cancellation Policy Grace</label>
+            <select class="luxury-select w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">
+              <option value="14" selected>14 Days Prior (Retainer Retained)</option>
+              <option value="30">30 Days Prior (Full Refund - Admin Fee)</option>
+              <option value="strict">Strict (Non-refundable Deposit)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button type="submit" class="btn-primary text-xs py-2.5 px-6 flex items-center gap-2">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Save Financial Policies</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 3. Client Notification & Dispatch Rules -->
+      <form onsubmit="event.preventDefault(); showToast('Notification & dispatch rules updated!', 'success');" class="bg-white dark:bg-[#221E26] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
+        <div class="border-b border-gray-100 dark:border-gray-800 pb-4">
+          <h3 class="font-serif text-lg font-bold flex items-center gap-2">
+            <i data-lucide="bell-ring" class="w-5 h-5 text-[#D6B887]"></i>
+            <span>Client Dispatch & Notification Automations</span>
+          </h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Configure automated notifications, reminders, and alerts triggered across booking lifecycles</p>
+        </div>
+
+        <div class="space-y-4 text-xs">
+          <!-- Toggle 1 -->
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-100 dark:border-gray-800">
+            <div class="pr-4">
+              <h4 class="font-bold text-gray-800 dark:text-gray-200">Instant Booking Confirmation Receipt</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-[11px] mt-0.5">Automatically dispatch formal booking confirmation and PDF summary to client email immediately upon booking submission.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 dark:bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#56334F] dark:peer-checked:bg-[#D6B887]"></div>
+            </label>
+          </div>
+
+          <!-- Toggle 2 -->
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-100 dark:border-gray-800">
+            <div class="pr-4">
+              <h4 class="font-bold text-gray-800 dark:text-gray-200">Director VIP Alert for Large Celebrations</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-[11px] mt-0.5">Dispatch urgent SMS & high-priority dashboard alert to Managing Director when event package estimate exceeds $10,000.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 dark:bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#56334F] dark:peer-checked:bg-[#D6B887]"></div>
+            </label>
+          </div>
+
+          <!-- Toggle 3 -->
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-100 dark:border-gray-800">
+            <div class="pr-4">
+              <h4 class="font-bold text-gray-800 dark:text-gray-200">48-Hour Pre-Event Logistics Briefing</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-[11px] mt-0.5">Automated SMS & email briefing sent to client with arrival timetable, venue gate instructions, and lead coordinator hotline.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 dark:bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#56334F] dark:peer-checked:bg-[#D6B887]"></div>
+            </label>
+          </div>
+
+          <!-- Toggle 4 -->
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-100 dark:border-gray-800">
+            <div class="pr-4">
+              <h4 class="font-bold text-gray-800 dark:text-gray-200">Automated Invoicing & Payment Receipts</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-[11px] mt-0.5">Instantly generate and email tax-compliant PDF receipts upon client deposit or milestone installment capture.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 dark:bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#56334F] dark:peer-checked:bg-[#D6B887]"></div>
+            </label>
+          </div>
+
+          <!-- Toggle 5 -->
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-100 dark:border-gray-800">
+            <div class="pr-4">
+              <h4 class="font-bold text-gray-800 dark:text-gray-200">Post-Event Feedback & Private Photo Vault Link</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-[11px] mt-0.5">Deliver a bespoke thank-you message and client feedback survey 24 hours following event conclusion.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 dark:bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#56334F] dark:peer-checked:bg-[#D6B887]"></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button type="submit" class="btn-primary text-xs py-2.5 px-6 flex items-center gap-2">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Save Dispatch Rules</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 4. Atelier Data Management & Backups (Clean, Executive Styling) -->
+      <div class="bg-white dark:bg-[#221E26] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 dark:border-gray-800 pb-4">
+          <div>
+            <h3 class="font-serif text-lg font-bold flex items-center gap-2">
+              <i data-lucide="database" class="w-5 h-5 text-[#D6B887]"></i>
+              <span>Atelier Data Management & Export Center</span>
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Download production rosters, create portable JSON snapshots, or refresh operational caches</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 self-start sm:self-auto">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Local Storage: Operational</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Export CSV -->
+          <div class="p-5 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-200/80 dark:border-gray-700 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-[#56334F]/10 dark:bg-[#D6B887]/10 text-[#56334F] dark:text-[#D6B887] flex items-center justify-center mb-3">
+                <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-bold text-xs text-gray-900 dark:text-white">Export Bookings Roster</h4>
+              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1">Generates a standard CSV sheet of all active and pending bookings for spreadsheet reporting.</p>
+            </div>
+            <button type="button" onclick="exportBookingsCSV()" class="btn-primary text-xs py-2 px-4 w-full flex items-center justify-center gap-2">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Download CSV Sheet</span>
+            </button>
+          </div>
+
+          <!-- Export JSON Backup -->
+          <div class="p-5 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-200/80 dark:border-gray-700 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-[#56334F]/10 dark:bg-[#D6B887]/10 text-[#56334F] dark:text-[#D6B887] flex items-center justify-center mb-3">
+                <i data-lucide="hard-drive-download" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-bold text-xs text-gray-900 dark:text-white">Full System JSON Snapshot</h4>
+              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1">Exports all atelier tables (bookings, custom themes, proposals, and packages) as a backup file.</p>
+            </div>
+            <button type="button" onclick="exportFullJSON()" class="btn-secondary text-xs py-2 px-4 w-full flex items-center justify-center gap-2">
+              <i data-lucide="code" class="w-3.5 h-3.5"></i>
+              <span>Download Backup JSON</span>
+            </button>
+          </div>
+
+          <!-- Refresh / Maintenance -->
+          <div class="p-5 rounded-2xl bg-gray-50 dark:bg-[#17151A] border border-gray-200/80 dark:border-gray-700 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-bold text-xs text-gray-900 dark:text-white">Refresh Atelier Sample Data</h4>
+              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1">Re-seeds client bookings and catalog packages with standard default records if testing.</p>
+            </div>
+            <button type="button" onclick="confirmResetData()" class="px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 hover:border-amber-500 dark:hover:border-amber-400 text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 text-xs font-semibold transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Clear Cache & Reseed</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="src/js/storage.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/main.js"></script>
+  <script>
+    // CSV Export Handler
+    function exportBookingsCSV() {
+      try {
+        const bookings = Storage.getBookings();
+        if (!bookings || !bookings.length) {
+          showToast('No booking records available to export.', 'info');
+          return;
+        }
+
+        const headers = ['Booking ID', 'Customer Name', 'Email', 'Phone', 'Event Type', 'Event Name', 'Venue Atmosphere', 'Date', 'Guests', 'Package Tier', 'Total Price', 'Deposit Paid', 'Status', 'Created At'];
+        
+        const rows = bookings.map(b => [
+          `"${b.id || ''}"`,
+          `"${(b.customerName || '').replace(/"/g, '""')}"`,
+          `"${b.customerEmail || ''}"`,
+          `"${b.customerPhone || ''}"`,
+          `"${b.eventType || ''}"`,
+          `"${(b.eventName || '').replace(/"/g, '""')}"`,
+          `"${b.venueType || ''}"`,
+          `"${b.date || ''}"`,
+          `"${b.guests || 0}"`,
+          `"${b.package || ''}"`,
+          `"${b.price || 0}"`,
+          `"${b.depositPaid || 0}"`,
+          `"${b.status || ''}"`,
+          `"${b.createdAt || ''}"`
+        ]);
+
+        const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', `lumora_bookings_${new Date().toISOString().split('T')[0]}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        showToast('Bookings roster exported to CSV successfully!', 'success');
+      } catch (err) {
+        console.error('Export CSV error:', err);
+        showToast('Failed to export CSV. Please try again.', 'error');
+      }
+    }
+
+    // JSON Export Handler
+    function exportFullJSON() {
+      try {
+        const payload = {
+          exportTimestamp: new Date().toISOString(),
+          system: 'Lumora Events Atelier Admin',
+          version: '2.4.0',
+          data: {
+            bookings: Storage.getBookings(),
+            messages: Storage.getMessages(),
+            proposals: Storage.get('lumora_proposals', []),
+            packages: Storage.getWeddingPackages(),
+            themes: Storage.getWeddingThemes()
+          }
+        };
+
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', `lumora_atelier_backup_${new Date().toISOString().split('T')[0]}.json`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        showToast('Complete system backup JSON downloaded!', 'success');
+      } catch (err) {
+        console.error('Export JSON error:', err);
+        showToast('Failed to export JSON backup.', 'error');
+      }
+    }
+
+    // Confirm & Reseed Handler
+    function confirmResetData() {
+      if (confirm('Are you sure you want to refresh the atelier cache with default sample bookings and packages?')) {
+        localStorage.clear();
+        showToast('Atelier sample data restored!', 'info');
+        setTimeout(() => window.location.reload(), 700);
+      }
+    }
+  </script>
+  </body>
+</html>
+

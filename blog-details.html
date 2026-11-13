@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Styling Secrets for an Unforgettable Milestone Birthday — Lumora Journal</title>
+  <meta name="description" content="In-depth guide to orchestrating a breathtaking milestone birthday celebration with luxury florals, lighting hierarchy, and gourmet menus.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            plum: { DEFAULT: '#56334F', 50: '#F9F4F8', 500: '#56334F', 600: '#472841' },
+            gold: { DEFAULT: '#D6B887', 500: '#D6B887', 600: '#C29F68' },
+            brand: { dark: '#17151A', cardDark: '#221E26', borderDark: '#352E3C', light: '#FAF8F5' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] transition-colors duration-300">
+
+  <!-- Header -->
+  <!-- Global Public Header Navigation (Matches Elan Events Luxury Navbar) -->
+  <header class="sticky top-0 z-50 bg-[#17151A] border-b border-[#D6B887]/20 text-white transition-all duration-300">
+    <div class="lumora-container flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#56334F] to-[#78466E] flex items-center justify-center p-2 shadow-md shadow-[#56334F]/30 group-hover:scale-105 transition-transform border border-[#D6B887]/30">
+          <img src="assets/logo/logo-mark.svg" alt="Lumora Mark" class="w-full h-full">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold tracking-wider text-white leading-none">
+            LUMORA
+          </span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#D6B887] uppercase mt-1">
+            EVENTS • BESPOKE
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (Exact Match to Screenshot) -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white/90">
+        
+        <!-- Home Link with Dropdown -->
+        <div class="relative group py-2">
+          <a href="index.html" class="flex items-center gap-1.5 text-white hover:text-[#D6B887] transition-colors py-1">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="absolute top-full left-0 hidden group-hover:block w-56 pt-2 z-50">
+            <div class="bg-[#1C1A22] rounded-2xl shadow-2xl border border-[#D6B887]/30 p-2 text-xs space-y-1 text-white">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/10 text-gray-300 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                <span>Home 1 – Classic Planner</span>
+              </a>
+              <a href="home-premium.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/10 text-gray-300 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                <span>Home 2 – Premium Luxury</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="text-white hover:text-[#D6B887] transition-colors py-2">About Us</a>
+        <a href="services.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Services</a>
+        <a href="themes-packages.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Themes & Packages</a>
+        <a href="gallery.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Gallery</a>
+        <a href="pricing.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Pricing</a>
+        <!-- Active Page: Journal (Golden Glow Underline) -->
+        <a href="blog.html" class="text-[#D6B887] font-bold relative py-1">
+          <span>Journal</span>
+          <span class="nav-indicator-glow absolute -bottom-1.5 left-0 right-0 h-[2.5px] bg-[#D6B887] rounded-full shadow-[0_2px_10px_rgba(214,184,135,0.9)]"></span>
+        </a>
+        <a href="contact.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions (Exact Match to Screenshot) -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Dark/Light Mode Circular Button (Hidden on Mobile View Navbar) -->
+        <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-[#D6B887]/60 hover:border-[#D6B887] bg-white/5 hover:bg-white/10 items-center justify-center text-[#D6B887] transition-all" title="Toggle Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+        </button>
+
+        <!-- RTL ⇄ Circular Button (Hidden on Mobile View Navbar) -->
+        <button class="rtl-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-[#D6B887]/60 hover:border-[#D6B887] bg-white/5 hover:bg-white/10 items-center justify-center text-[#D6B887] transition-all" title="Toggle RTL Direction" aria-label="Toggle RTL">
+          <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Sign In Button (Hidden on Mobile View Navbar) -->
+        <a href="login.html" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D6B887] text-[#D6B887] hover:bg-[#D6B887] hover:text-[#17151A] text-xs sm:text-sm font-semibold transition-all">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Sign In</span>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl text-white hover:bg-white/10 transition-colors" aria-label="Open Mobile Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Menu (Matches Mobile View Reference) -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#17151A] transition-opacity">
+    <div class="fixed inset-0 w-full h-full bg-[#17151A] text-white p-6 flex flex-col justify-between overflow-y-auto">
+      
+      <!-- Top Brand & Close Button -->
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#56334F] to-[#78466E] p-2 flex items-center justify-center border border-[#D6B887]/40 shadow-md">
+              <img src="assets/logo/logo-mark.svg" alt="Lumora" class="w-full h-full">
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-lg font-bold tracking-wider text-white leading-none">LUMORA</span>
+              <span class="text-[8px] font-bold tracking-[0.25em] text-[#D6B887] uppercase mt-0.5">EVENTS • BESPOKE</span>
+            </div>
+          </a>
+          <button id="mobile-menu-close" class="p-2 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-colors" aria-label="Close menu">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Navigation Links & Accordions -->
+        <nav class="flex flex-col gap-2 mt-5 text-sm font-medium">
+          
+          <!-- Home Accordion Dropdown -->
+          <div class="rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+            <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-white font-semibold">
+              <span class="flex items-center gap-2.5">
+                <i data-lucide="home" class="w-4 h-4 text-[#D6B887]"></i>
+                <span>Home</span>
+              </span>
+              <i data-lucide="chevron-down" class="dropdown-chevron w-4 h-4 text-white/60 transition-transform"></i>
+            </button>
+            <div class="hidden mobile-dropdown-content px-2 pb-2 space-y-1 text-xs">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-white/70 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-white/30"></span>
+                <span>Home 1 — Classic</span>
+              </a>
+              <a href="home-premium.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-white/70 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-white/30"></span>
+                <span>Home 2 — Premium Luxury</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="info" class="w-4 h-4 text-white/50"></i>
+            <span>About Us</span>
+          </a>
+          <a href="services.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="sparkles" class="w-4 h-4 text-white/50"></i>
+            <span>Services</span>
+          </a>
+          <a href="themes-packages.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="palette" class="w-4 h-4 text-white/50"></i>
+            <span>Themes & Packages</span>
+          </a>
+          <a href="gallery.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="camera" class="w-4 h-4 text-white/50"></i>
+            <span>Gallery</span>
+          </a>
+          <a href="pricing.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="tag" class="w-4 h-4 text-white/50"></i>
+            <span>Pricing</span>
+          </a>
+          <a href="blog.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="book-open" class="w-4 h-4 text-white/50"></i>
+            <span>Journal</span>
+          </a>
+          <a href="contact.html" class="px-4 py-2.5 rounded-xl hover:bg-white/5 text-white/90 hover:text-white transition-colors flex items-center gap-2.5">
+            <i data-lucide="mail" class="w-4 h-4 text-white/50"></i>
+            <span>Contact</span>
+          </a>
+
+          <!-- Dashboard Accordion Dropdown -->
+          <div class="rounded-2xl bg-white/5 border border-white/10 overflow-hidden mt-1">
+            <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-white font-semibold">
+              <span class="flex items-center gap-2.5">
+                <i data-lucide="layout-dashboard" class="w-4 h-4 text-[#D6B887]"></i>
+                <span>Dashboard</span>
+              </span>
+              <i data-lucide="chevron-down" class="dropdown-chevron w-4 h-4 text-white/60 transition-transform"></i>
+            </button>
+            <div class="hidden mobile-dropdown-content px-2 pb-2 space-y-1 text-xs">
+              <a href="client-dashboard.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-white/70 hover:text-white transition-colors">
+                <i data-lucide="user" class="w-3.5 h-3.5 text-[#D6B887]"></i>
+                <span>Client Dashboard</span>
+              </a>
+              <a href="admin-dashboard.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-white/70 hover:text-white transition-colors">
+                <i data-lucide="shield" class="w-3.5 h-3.5 text-[#D6B887]"></i>
+                <span>Admin Operations</span>
+              </a>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+
+      <!-- Bottom Controls: Dual Circles (RTL + Theme) + Full-width Gold Pill Login/Logout -->
+      <div class="pt-6 border-t border-white/10 mt-6 space-y-4">
+        
+        <!-- Dual Circles: Left = RTL (Outlined Circle ⇄), Right = Theme Toggle (Solid Gold Circle ☼/☾) -->
+        <div class="flex items-center justify-center gap-5">
+          <!-- Circular RTL Button -->
+          <button class="rtl-toggle-btn w-12 h-12 rounded-full border-2 border-[#D6B887] bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#D6B887] transition-all shadow-md active:scale-95" title="Toggle RTL Direction" aria-label="Toggle RTL">
+            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Circular Dark/Light Mode Button -->
+          <button class="theme-toggle-btn w-12 h-12 rounded-full bg-[#D6B887] hover:bg-[#FAF0DC] flex items-center justify-center text-[#17151A] transition-all shadow-lg shadow-[#D6B887]/30 active:scale-95" title="Toggle Theme" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="icon-sun w-5 h-5 hidden"></i>
+            <i data-lucide="moon" class="icon-moon w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Full-width Gold Outlined Pill Button (Sign In / Logout) -->
+        <a href="login.html" class="mobile-auth-btn w-full py-3.5 px-6 rounded-full border-2 border-[#D6B887] text-[#D6B887] hover:bg-[#D6B887] hover:text-[#17151A] text-sm font-bold flex items-center justify-center gap-2.5 transition-all shadow-md group">
+          <i data-lucide="log-in" class="mobile-auth-icon w-4 h-4 transition-transform group-hover:translate-x-0.5"></i>
+          <span class="mobile-auth-text">Sign In</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Article Container -->
+  <article class="py-16">
+    <div class="lumora-container max-w-4xl">
+      
+      <!-- Breadcrumb -->
+      <div class="text-xs text-gray-400 mb-6 flex items-center gap-2">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>/</span>
+        <a href="blog.html" class="hover:underline">Journal</a>
+        <span>/</span>
+        <span class="text-[#56334F] dark:text-[#D6B887] font-semibold">Milestone Styling Guide</span>
+      </div>
+
+      <!-- Article Header -->
+      <div class="space-y-4 mb-8">
+        <span class="px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950 text-xs font-bold text-[#56334F] dark:text-[#D6B887]">Event Styling & Design</span>
+        <h1 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+          10 Styling Secrets for an Unforgettable Milestone Birthday Soirée
+        </h1>
+        
+        <div class="flex items-center gap-4 pt-2 text-xs text-gray-500 border-t border-b border-gray-100 dark:border-gray-800 py-4">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Elena Laurent" class="w-10 h-10 rounded-full object-cover">
+          <div>
+            <div class="font-bold text-gray-900 dark:text-gray-100">Elena Laurent</div>
+            <div class="text-[11px] text-[#D6B887]">Head of Scenography • 6 min read</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="rounded-3xl overflow-hidden shadow-xl aspect-[16/9] mb-10">
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80" alt="Milestone Birthday Celebration" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Article Prose Content -->
+      <div class="space-y-6 text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+        
+        <p class="text-lg leading-relaxed font-serif italic text-[#56334F] dark:text-[#D6B887]">
+          "A truly great birthday celebration is not merely an assembly of decorations; it is an orchestrated emotional journey from the moment the guest of honor crosses the threshold."
+        </p>
+
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#17151A] dark:text-white pt-4">
+          1. Establish a Layered Lighting Hierarchy
+        </h3>
+        <p>
+          Lighting dictates ambiance more than any single decorative piece. Rather than relying on overhead room lights, our designers employ warm amber uplighting (2700K), pin-spotting on the centerpiece cake, and subtle fairy light canopies that draw the eye upward and create an intimate, cocooning warmth.
+        </p>
+
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#17151A] dark:text-white pt-4">
+          2. The Sensory Impact of Custom Scents & Botanicals
+        </h3>
+        <p>
+          Memory is profoundly tied to aroma. Infusing the welcome foyer with subtle notes of cedarwood, Bulgarian rose, or vanilla bourbon establishes an indelible association. Select fresh seasonal blooms that release natural perfume gently without overpowering the dining courses.
+        </p>
+
+        <blockquote class="p-6 rounded-2xl bg-purple-50/50 dark:bg-purple-950/40 border-l-4 border-[#56334F] dark:border-[#D6B887] text-xs sm:text-sm italic my-6">
+          "When guests look back at photographs, they remember how they felt in that room. The harmony of texture, scent, and sound makes the memory indelible."
+        </blockquote>
+
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#17151A] dark:text-white pt-4">
+          3. Curating The Cake Reveal Moment
+        </h3>
+        <p>
+          Never let the birthday cake simply sit static on a corner table. Transform the dessert display into a timed theatrical climax: dim the perimeter lights, initiate cold sparklers or ambient candlelight, and cue the live music as the guest makes their wish.
+        </p>
+
+      </div>
+
+      <!-- Author Box -->
+      <div class="mt-12 p-8 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 flex items-center gap-6">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Elena Laurent" class="w-16 h-16 rounded-full object-cover">
+        <div>
+          <h4 class="font-serif font-bold text-base">Elena Laurent</h4>
+          <p class="text-xs text-[#D6B887] font-semibold">Founder & Creative Director at Lumora</p>
+          <p class="text-xs text-gray-500 mt-1">Elena has planned milestone celebrations for royal families, artists, and corporate pioneers worldwide.</p>
+        </div>
+      </div>
+
+      <!-- Comment Section Simulation -->
+      <div class="mt-12 space-y-6">
+        <h3 class="font-serif text-xl font-bold">Leave a Thought</h3>
+        <form onsubmit="event.preventDefault(); showToast('Thank you! Your comment has been submitted for review.', 'success'); this.reset();" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" required placeholder="Your Name" class="p-3 rounded-xl bg-white dark:bg-[#221E26] border border-gray-200 dark:border-gray-700 text-xs">
+            <input type="email" required placeholder="Your Email" class="p-3 rounded-xl bg-white dark:bg-[#221E26] border border-gray-200 dark:border-gray-700 text-xs">
+          </div>
+          <textarea rows="4" required placeholder="Share your experience or ask a question..." class="w-full p-3 rounded-xl bg-white dark:bg-[#221E26] border border-gray-200 dark:border-gray-700 text-xs"></textarea>
+          <button type="submit" class="btn-primary text-xs">Post Comment</button>
+        </form>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Footer -->
+    <!-- Lumora Master Atelier Footer -->
+  <footer class="bg-[#17151A] text-gray-400 pt-14 pb-10 border-t border-[#D6B887]/20 relative z-20">
+    <div class="lumora-container">
+      
+      <!-- Main Grid: 4-Column Balanced Atelier Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-gray-800/80">
+        
+        <!-- Column 1: Brand Heritage & Philosophy (lg:col-span-4) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-[#56334F] flex items-center justify-center p-2 shadow-sm border border-[#D6B887]/30">
+              <img src="assets/logo/logo-mark.svg" alt="Lumora Mark" class="w-full h-full">
+            </div>
+            <div>
+              <span class="font-serif text-xl font-bold text-white tracking-wider">LUMORA</span>
+              <span class="block text-[8px] font-bold text-[#D6B887] tracking-[0.3em] uppercase">EVENTS</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Plan • Celebrate • Cherish. A bespoke event planning atelier creating luxury birthdays, destination weddings, and memorable milestones worldwide.
+          </p>
+          <!-- Social Icons with Luxury Hover & Crisp Vectors -->
+          <div class="flex items-center gap-2.5 text-white pt-1">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-[#D6B887] hover:bg-[#56334F] text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-[#D6B887] hover:bg-[#56334F] text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-[#D6B887] hover:bg-[#56334F] text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.546.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-[#D6B887] hover:bg-[#56334F] text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Signature Celebrations (lg:col-span-2) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Celebrations</h4>
+          <ul class="text-xs space-y-2.5 text-gray-400">
+            <li><a href="services.html" class="hover:text-[#D6B887] transition-colors">Milestone Birthdays</a></li>
+            <li><a href="services.html" class="hover:text-[#D6B887] transition-colors">Weddings &amp; Galas</a></li>
+            <li><a href="services.html" class="hover:text-[#D6B887] transition-colors">Beach &amp; Coastal Banquets</a></li>
+            <li><a href="themes-packages.html" class="hover:text-[#D6B887] transition-colors">Yacht &amp; Villa Soirées</a></li>
+            <li><a href="services.html" class="hover:text-[#D6B887] transition-colors">Baby Showers</a></li>
+            <li><a href="themes-packages.html" class="hover:text-[#D6B887] transition-colors">Corporate Summits</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Explore Atelier (lg:col-span-2) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="text-xs space-y-2.5 text-gray-400">
+            <li><a href="index.html" class="hover:text-[#D6B887] transition-colors">Home Classic</a></li>
+            <li><a href="home-premium.html" class="hover:text-[#D6B887] transition-colors">Home Premium</a></li>
+            <li><a href="about.html" class="hover:text-[#D6B887] transition-colors">Our Story &amp; Team</a></li>
+            <li><a href="gallery.html" class="hover:text-[#D6B887] transition-colors">Event Gallery</a></li>
+            <li><a href="pricing.html" class="hover:text-[#D6B887] transition-colors">Packages &amp; Rates</a></li>
+            <li><a href="blog.html" class="hover:text-[#D6B887] transition-colors">Planning Journal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Private Concierge & VIP Newsletter (lg:col-span-4) -->
+        <div class="lg:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Private Concierge</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Receive private party inspiration and exclusive VIP venue calendar openings.
+          </p>
+          <form onsubmit="event.preventDefault(); if(window.showToast) showToast('Thank you for subscribing to Lumora journal.', 'success');" class="space-y-2 pt-1">
+            <div class="flex rounded-full overflow-hidden border border-gray-700 bg-gray-900/90 focus-within:border-[#D6B887] transition-colors p-1">
+              <input type="email" required placeholder="Enter your email" class="bg-transparent px-3 text-xs text-white placeholder-gray-500 focus:outline-none flex-1">
+              <button type="submit" class="px-5 py-2 rounded-full bg-[#56334F] text-white text-xs font-semibold hover:bg-[#D6B887] hover:text-[#17151A] transition-colors shadow-sm">
+                Join
+              </button>
+            </div>
+          </form>
+          <div class="text-[11px] text-gray-400 space-y-1.5 pt-1">
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-[#D6B887] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>Direct: <a href="tel:+18005866721" class="hover:text-white transition-colors">+1 (800) 586-6721</a></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-[#D6B887] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>Email: <a href="mailto:concierge@lumora.events" class="hover:text-white transition-colors">concierge@lumora.events</a></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div class="text-center sm:text-left">
+          © 2026 Lumora Events Atelier. All rights reserved. Celebrate Every Moment.
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="404.html" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+          <a href="coming-soon.html" class="hover:text-gray-300 transition-colors">Terms of Service</a>
+          <a href="client-dashboard.html" class="hover:text-[#D6B887] transition-colors">Client Portal</a>
+          <a href="admin-dashboard.html" class="hover:text-[#D6B887] transition-colors">Admin Portal</a>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-[#D6B887] transition-colors flex items-center gap-1 group">
+            <span>Back to Top</span>
+            <span class="inline-block transition-transform group-hover:-translate-y-0.5">↑</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="src/js/storage.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/main.js"></script>
+</body>
+</html>
+

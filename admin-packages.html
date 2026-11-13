@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Packages & Themes — Lumora Events Admin Panel</title>
+  <meta name="description" content="Configure packages, adjust pricing tiers, and curate decorative theme collections.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            plum: { DEFAULT: '#56334F', 50: '#F9F4F8', 500: '#56334F', 600: '#472841' },
+            gold: { DEFAULT: '#D6B887', 500: '#D6B887', 600: '#C29F68' },
+            brand: { dark: '#17151A', cardDark: '#221E26', borderDark: '#352E3C', light: '#FAF8F5' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+
+  <!-- ADMIN SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
+  <aside id="adminSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
+    
+    <div>
+      <!-- Top Brand Logo & Mobile Close (X) Button -->
+      <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-gray-800">
+        <a href="admin-dashboard.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#56334F] flex items-center justify-center p-1.5 shadow-sm">
+            <img src="assets/logo/logo-mark.svg" alt="Lumora" class="w-full h-full">
+          </div>
+          <div>
+            <span class="font-serif text-lg font-bold tracking-wider text-[#56334F] dark:text-[#FAF8F5]">LUMORA</span>
+            <span class="block text-[7px] font-bold text-[#D6B887] tracking-[0.25em] uppercase">ADMIN CONTROL</span>
+          </div>
+        </a>
+        <button type="button" class="mobile-sidebar-close lg:hidden p-2 rounded-xl text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Close sidebar">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mt-6 space-y-1 text-xs font-semibold">
+        <a href="admin-dashboard.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="admin-analytics.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+          <span>Analytics</span>
+        </a>
+        <a href="admin-users.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Users</span>
+        </a>
+        <a href="admin-events.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Events</span>
+        </a>
+        <a href="admin-bookings.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="file-check" class="w-4 h-4"></i>
+          <span>Bookings & Orders</span>
+        </a>
+        <a href="admin-packages.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl bg-purple-50 dark:bg-purple-950/60 text-[#56334F] dark:text-[#D6B887]">
+          <i data-lucide="package" class="w-4 h-4"></i>
+          <span>Packages & Themes</span>
+        </a>
+        <a href="admin-messages.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>Messages</span>
+        </a>
+        <a href="admin-payments.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+          <span>Payments Ledger</span>
+        </a>
+        <a href="admin-settings.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Utility Bar: Dual Swap (RTL ⇄) & View Mode (Theme ☼/☾) Buttons + View Public Site (Mobile Drawer Only) -->
+    <div class="lg:hidden pt-5 border-t border-gray-100 dark:border-gray-800 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Preferences</span>
+        <div class="flex items-center gap-2.5">
+          <!-- Swap (RTL ⇄) Circular Button -->
+          <button type="button" onclick="window.toggleRTL()" class="rtl-toggle-btn w-9 h-9 rounded-full border-2 border-[#D6B887] bg-white/5 dark:bg-white/5 hover:bg-[#D6B887]/15 flex items-center justify-center text-[#D6B887] transition-all shadow-sm active:scale-95" title="Swap Direction (RTL / LTR)" aria-label="Swap Direction">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <!-- View Mode (Theme ☼/☾) Circular Button -->
+          <button type="button" onclick="window.toggleTheme()" class="theme-toggle-btn w-9 h-9 rounded-full bg-[#D6B887] hover:bg-[#FAF0DC] flex items-center justify-center text-[#17151A] transition-all shadow-md shadow-[#D6B887]/30 active:scale-95" title="Toggle Theme (View Mode)" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+            <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- View Public Site Button -->
+      <a href="index.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:text-[#56334F] dark:text-gray-300 dark:hover:text-[#D6B887] hover:bg-gray-50 dark:hover:bg-gray-800/60 transition-colors">
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span>View Public Site</span>
+      </a>
+    </div>
+
+    <!-- Bottom User Strip -->
+    <div class="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Admin" class="w-9 h-9 rounded-full object-cover border border-[#D6B887]">
+        <div class="overflow-hidden">
+          <h4 class="text-xs font-bold text-[#17151A] dark:text-[#FAF8F5] truncate">Alexander Vance</h4>
+          <span class="text-[11px] text-[#D6B887]">Managing Director</span>
+        </div>
+      </div>
+      
+      <button type="button" onclick="logoutUser()" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 flex items-center justify-center lg:justify-start gap-2 border border-rose-200/60 dark:border-rose-900/40 lg:border-transparent transition-colors">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Sign Out</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <div id="adminSidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
+
+  <!-- Content -->
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+    
+    <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
+        <button id="adminSidebarToggleBtn" class="lg:hidden p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 shrink-0" aria-label="Toggle Navigation">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <div class="min-w-0 flex-1">
+          <h1 class="text-sm sm:text-lg font-bold font-serif truncate">Manage Packages & Themes</h1>
+          <p class="hidden sm:block text-xs text-gray-500 dark:text-gray-400 truncate">Configure base rates, catalog themes and feature toggles</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-600 dark:text-gray-300 hover:text-[#56334F] dark:hover:text-[#D6B887] px-3.5 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>View Public Site</span>
+        </a>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-[#D6B887]" title="Toggle Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+        </button>
+
+        <!-- RTL Toggle -->
+        <button class="rtl-toggle-btn px-2.5 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-semibold text-gray-700 dark:text-[#D6B887]" title="Toggle RTL" aria-label="Toggle RTL">
+          <span class="rtl-label">RTL</span>
+        </button>
+      </div></header>
+
+    <main class="flex-1 p-6 sm:p-10 space-y-10 w-full max-w-full overflow-x-hidden">
+      
+      <!-- Section 1: Wedding Package Rates Management -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold">Wedding Experience Package Rates</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Configure base rates, guest scales, and live pricing for the 4 wedding tiers</p>
+          </div>
+          <button id="adminSaveAllPackagesBtn" class="btn-primary text-xs py-2 px-4 shadow-md flex items-center gap-1.5">
+            <i data-lucide="save" class="w-3.5 h-3.5"></i>
+            <span>Save All Rates</span>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Essential Wedding -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+            <div>
+              <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 1 • Intimate</span>
+              <h4 class="font-serif text-lg font-bold mt-1">Essential Wedding</h4>
+              <div class="flex items-center gap-2 mt-3">
+                <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
+                <input id="adminRateEssential" type="number" value="2500" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
+                <span class="text-xs text-gray-600 dark:text-gray-400">base</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Up to 75 guests. Core floral arch, linen settings, and dedicated coordinator.</p>
+            </div>
+            <button onclick="saveSinglePackage('essential')" class="w-full btn-secondary text-xs py-2">Update Rate</button>
+          </div>
+
+          <!-- Luxury Wedding (Featured) -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border-2 border-[#56334F] dark:border-[#D6B887] shadow-md space-y-3 flex flex-col justify-between relative">
+            <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#D6B887] text-[#17151A]">Signature</span>
+            <div>
+              <span class="text-xs text-[#D6B887] font-bold uppercase tracking-wider block">Tier 2 • Most Popular</span>
+              <h4 class="font-serif text-lg font-bold mt-1">Luxury Wedding</h4>
+              <div class="flex items-center gap-2 mt-3">
+                <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
+                <input id="adminRateLuxury" type="number" value="5800" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
+                <span class="text-xs text-gray-600 dark:text-gray-400">base</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Up to 150 guests. 14ft floral stage, Austrian chandeliers, and cold sparks.</p>
+            </div>
+            <button onclick="saveSinglePackage('luxury')" class="w-full btn-primary text-xs py-2">Update Rate</button>
+          </div>
+
+          <!-- Royal Wedding -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+            <div>
+              <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 3 • Palatial</span>
+              <h4 class="font-serif text-lg font-bold mt-1">Royal Wedding</h4>
+              <div class="flex items-center gap-2 mt-3">
+                <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
+                <input id="adminRateRoyal" type="number" value="12500" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
+                <span class="text-xs text-gray-600 dark:text-gray-400">base</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Up to 300 guests. Monolithic floral sculptures, mirror runway, and VIP lounge.</p>
+            </div>
+            <button onclick="saveSinglePackage('royal')" class="w-full btn-secondary text-xs py-2">Update Rate</button>
+          </div>
+
+          <!-- Bespoke Signature -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+            <div>
+              <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 4 • Haute Couture</span>
+              <h4 class="font-serif text-lg font-bold mt-1">Bespoke Signature</h4>
+              <div class="flex items-center gap-2 mt-3">
+                <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
+                <input id="adminRateBespoke" type="number" value="25000" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
+                <span class="text-xs text-gray-600 dark:text-gray-400">base</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Unlimited guests. Global logistics, glass pavilions, and multi-day itinerary.</p>
+            </div>
+            <button onclick="saveSinglePackage('bespoke')" class="w-full btn-secondary text-xs py-2">Update Rate</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 2: 6 Signature Wedding Themes Management -->
+      <div class="space-y-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold">Signature Wedding Themes (6 Collections)</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Manage 360° virtual reality scenes, color swatches, and active studio themes</p>
+          </div>
+          <button onclick="showToast('Theme customizer modal active in live atelier.', 'info')" class="btn-secondary text-xs py-2 px-4">
+            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Preview in Atelier
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Theme 1 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-[#D6B887]/40 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#56334F] text-white">Theme 1</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Royal Plum &amp; Gold</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Grand Imperial Ballroom with Austrian crystal chandeliers &amp; plum velvet.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#56334F]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#17151A] border border-gray-600"></span>
+              <span class="w-3 h-3 rounded-full bg-[#ECD2B2]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+          <!-- Theme 2 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-pink-900 text-pink-200">Theme 2</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Pastel Whimsical</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Sunlit grand ballroom with clouds of blush peonies and sweet peas.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#F7D6E0]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#B5838D]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FAF8F5]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+          <!-- Theme 3 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-900 text-orange-200">Theme 3</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Tropical Sunset</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Riviera oceanfront terrace &amp; dune pavilion with candlelit tiki torches.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#E07A5F]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#3D405B]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#81B29A]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+          <!-- Theme 4 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-200">Theme 4</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Enchanted Garden</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Tuscan botanical orangery glasshouse with 5,000 warm micro-fairy lights.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#2D5A27]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#56334F]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FAF8F5]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+          <!-- Theme 5 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-gray-700 text-white">Theme 5</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Ivory &amp; Pearl</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">All-white Ecuadorian roses, pearl-trimmed crystal chandeliers, and Thassos marble.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#FFFFFF]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#ECD2B2]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#E5E5E5]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+          <!-- Theme 6 -->
+          <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-950 text-[#D6B887]">Theme 6</span>
+              <span class="text-[10px] text-emerald-500 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 360° VR Active</span>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Modern Black &amp; Gold</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Obsidian black mirror floors, 24k gold geometric chandeliers, and brass arches.</p>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-white/10 text-[11px] text-gray-400">
+              <span class="w-3 h-3 rounded-full bg-[#17151A] border border-gray-600"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D6B887]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#221E26]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#E5C07B]"></span>
+              <span class="ml-auto font-mono text-[10px] text-[#D6B887]">Assets Verified</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 3: Decor Upgrade Pricing Configuration -->
+      <div class="space-y-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+        <h3 class="font-serif text-xl sm:text-2xl font-bold">Atelier Decor Upgrade Rates</h3>
+        <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm overflow-x-auto">
+          <table class="w-full text-xs text-left">
+            <thead>
+              <tr class="border-b border-white/10 text-gray-400 uppercase text-[10px]">
+                <th class="pb-3">Enhancement</th>
+                <th class="pb-3">Category</th>
+                <th class="pb-3">Standard Upgrade Rate</th>
+                <th class="pb-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10 text-gray-300">
+              <tr>
+                <td class="py-3 font-semibold text-white">Cascading Orchids, Wisteria &amp; Hydrangeas</td>
+                <td class="py-3">Floristry</td>
+                <td class="py-3 font-mono text-[#D6B887] font-bold">+$800</td>
+                <td class="py-3 text-emerald-500">Active in Studio</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-semibold text-white">5,000 Micro-Fairy Light Canopy</td>
+                <td class="py-3">Ceiling Scenography</td>
+                <td class="py-3 font-mono text-[#D6B887] font-bold">+$1,200</td>
+                <td class="py-3 text-emerald-500">Active in Studio</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-semibold text-white">Mirrored Monogram Entrance Gate</td>
+                <td class="py-3">Entrance Arch</td>
+                <td class="py-3 font-mono text-[#D6B887] font-bold">+$750</td>
+                <td class="py-3 text-emerald-500">Active in Studio</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-semibold text-white">Cold Spark Machine Grand Exit</td>
+                <td class="py-3">Special FX</td>
+                <td class="py-3 font-mono text-[#D6B887] font-bold">+$850</td>
+                <td class="py-3 text-emerald-500">Active in Studio</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="src/js/storage.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/main.js"></script>
+  <script>
+    
+
+    function loadAdminPackageRates() {
+      if (!window.Storage) return;
+      const pkgs = Storage.getWeddingPackages();
+      if (pkgs.essential && document.getElementById('adminRateEssential')) {
+        document.getElementById('adminRateEssential').value = pkgs.essential.price;
+      }
+      if (pkgs.luxury && document.getElementById('adminRateLuxury')) {
+        document.getElementById('adminRateLuxury').value = pkgs.luxury.price;
+      }
+      if (pkgs.royal && document.getElementById('adminRateRoyal')) {
+        document.getElementById('adminRateRoyal').value = pkgs.royal.price;
+      }
+      if (pkgs.bespoke && document.getElementById('adminRateBespoke')) {
+        document.getElementById('adminRateBespoke').value = pkgs.bespoke.price;
+      }
+    }
+
+    function saveSinglePackage(key) {
+      if (!window.Storage) return;
+      const pkgs = Storage.getWeddingPackages();
+      const inputMap = {
+        'essential': 'adminRateEssential',
+        'luxury': 'adminRateLuxury',
+        'royal': 'adminRateRoyal',
+        'bespoke': 'adminRateBespoke'
+      };
+      const inputEl = document.getElementById(inputMap[key]);
+      if (inputEl && pkgs[key]) {
+        pkgs[key].price = parseInt(inputEl.value, 10) || pkgs[key].price;
+        Storage.saveWeddingPackages(pkgs);
+        if (window.showToast) {
+          showToast(`${pkgs[key].name} rate updated to $${pkgs[key].price.toLocaleString()}.`, 'success');
+        }
+      }
+    }
+
+    const saveAllBtn = document.getElementById('adminSaveAllPackagesBtn');
+    if (saveAllBtn) {
+      saveAllBtn.addEventListener('click', () => {
+        ['essential', 'luxury', 'royal', 'bespoke'].forEach(k => saveSinglePackage(k));
+        if (window.showToast) {
+          showToast('All wedding package rates saved to system.', 'success');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadAdminPackageRates);
+  </script>
+</body>
+</html>
+

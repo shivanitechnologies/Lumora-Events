@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — 404 | Lumora Events</title>
+  <meta name="description" content="The celebration page you are looking for does not exist. Return to Lumora Events.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            plum: { DEFAULT: '#56334F', 50: '#F9F4F8', 500: '#56334F', 600: '#472841' },
+            gold: { DEFAULT: '#D6B887', 500: '#D6B887', 600: '#C29F68' },
+            brand: { dark: '#17151A', cardDark: '#221E26', borderDark: '#352E3C', light: '#FAF8F5' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+  <!-- Global Public Header Navigation (Matches Elan Events Luxury Navbar) -->
+  <header class="sticky top-0 z-50 bg-[#17151A] border-b border-[#D6B887]/20 text-white transition-all duration-300">
+    <div class="lumora-container flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#56334F] to-[#78466E] flex items-center justify-center p-2 shadow-md shadow-[#56334F]/30 group-hover:scale-105 transition-transform border border-[#D6B887]/30">
+          <img src="assets/logo/logo-mark.svg" alt="Lumora Mark" class="w-full h-full">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold tracking-wider text-white leading-none">
+            LUMORA
+          </span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#D6B887] uppercase mt-1">
+            EVENTS • BESPOKE
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (Exact Match to Screenshot) -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white/90">
+        <!-- Home Link with Dropdown -->
+        <div class="relative group py-2">
+          <a href="index.html" class="flex items-center gap-1.5 text-white hover:text-[#D6B887] transition-colors py-1">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="absolute top-full left-0 hidden group-hover:block w-56 pt-2 z-50">
+            <div class="bg-[#1C1A22] rounded-2xl shadow-2xl border border-[#D6B887]/30 p-2 text-xs space-y-1 text-white">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/10 text-gray-300 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                <span>Home 1 – Classic Planner</span>
+              </a>
+              <a href="home-premium.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/10 text-gray-300 hover:text-white transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                <span>Home 2 – Premium Luxury</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="text-white hover:text-[#D6B887] transition-colors py-2">About Us</a>
+        <a href="services.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Services</a>
+        <a href="themes-packages.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Themes & Packages</a>
+        <a href="gallery.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Gallery</a>
+        <a href="pricing.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Pricing</a>
+        <a href="blog.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Journal</a>
+        <a href="contact.html" class="text-white hover:text-[#D6B887] transition-colors py-2">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions (Exact Match to Screenshot) -->
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-[#D6B887]/60 hover:border-[#D6B887] bg-white/5 hover:bg-white/10 items-center justify-center text-[#D6B887] transition-all" title="Toggle Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+        </button>
+
+        <button class="rtl-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-[#D6B887]/60 hover:border-[#D6B887] bg-white/5 hover:bg-white/10 items-center justify-center text-[#D6B887] transition-all" title="Toggle RTL Direction" aria-label="Toggle RTL">
+          <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+        </button>
+
+        <a href="login.html" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D6B887] text-[#D6B887] hover:bg-[#D6B887] hover:text-[#17151A] text-xs sm:text-sm font-semibold transition-all">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center p-6 text-center">
+    <div class="max-w-md space-y-6">
+      <div class="font-serif text-8xl font-bold text-[#56334F] dark:text-[#D6B887]">404</div>
+      <h1 class="font-serif text-2xl sm:text-3xl font-bold">A Milestone Out of Place</h1>
+      <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
+        The celebration page or proposal you are searching for has been moved or concluded. Allow us to escort you back to our grand portfolio.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 pt-2">
+        <a href="index.html" class="btn-primary text-xs py-3 px-6">Return to Home</a>
+        <a href="services.html" class="btn-secondary text-xs py-3 px-6">Browse Services</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-gray-400">
+    © 2026 Lumora Events Atelier.
+  </footer>
+
+  <script src="src/js/storage.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/main.js"></script>
+</body>
+</html>
+

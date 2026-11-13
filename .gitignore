@@ -1,0 +1,7 @@
+# Dependencies & temporary files
+node_modules/
+scratch/
+powershell.bat
+*.log
+.DS_Store
+Thumbs.db

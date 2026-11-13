@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications — Lumora Events Client Portal</title>
+  <meta name="description" content="Stay updated with your event timeline, proposals, and concierge messages.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            plum: { DEFAULT: '#56334F', 50: '#F9F4F8', 500: '#56334F', 600: '#472841' },
+            gold: { DEFAULT: '#D6B887', 500: '#D6B887', 600: '#C29F68' },
+            brand: { dark: '#17151A', cardDark: '#221E26', borderDark: '#352E3C', light: '#FAF8F5' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+
+  <!-- Sidebar -->
+  <!-- CLIENT SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
+  <aside id="clientSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
+    
+    <div>
+      <!-- Top Brand Logo & Mobile Close (X) Button -->
+      <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-gray-800">
+        <a href="client-dashboard.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#56334F] flex items-center justify-center p-1.5 shadow-sm">
+            <img src="assets/logo/logo-mark.svg" alt="Lumora" class="w-full h-full">
+          </div>
+          <div>
+            <span class="font-serif text-lg font-bold tracking-wider text-[#56334F] dark:text-[#FAF8F5]">LUMORA</span>
+            <span class="block text-[7px] font-bold text-[#D6B887] tracking-[0.25em] uppercase">CLIENT PORTAL</span>
+          </div>
+        </a>
+        <button type="button" class="mobile-sidebar-close lg:hidden p-2 rounded-xl text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Close sidebar">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mt-6 space-y-1 text-xs font-semibold">
+        <a href="client-dashboard.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Overview</span>
+        </a>
+        <a href="submit-event.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+          <span>Submit Event</span>
+        </a>
+        <a href="my-bookings.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>My Bookings</span>
+        </a>
+        <a href="proposals.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Decor & Menus</span>
+        </a>
+        <a href="payments.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="credit-card" class="w-4 h-4"></i>
+          <span>Installments</span>
+        </a>
+        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl bg-purple-50 dark:bg-purple-950/60 text-[#56334F] dark:text-[#D6B887]">
+          <i data-lucide="bell" class="w-4 h-4"></i>
+          <span>Notifications</span>
+        </a>
+        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Utility Bar: Dual Swap (RTL ⇄) & View Mode (Theme ☼/☾) Buttons + View Public Site (Mobile Drawer Only) -->
+    <div class="lg:hidden pt-5 border-t border-gray-100 dark:border-gray-800 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Preferences</span>
+        <div class="flex items-center gap-2.5">
+          <!-- Swap (RTL ⇄) Circular Button -->
+          <button type="button" onclick="window.toggleRTL()" class="rtl-toggle-btn w-9 h-9 rounded-full border-2 border-[#D6B887] bg-white/5 dark:bg-white/5 hover:bg-[#D6B887]/15 flex items-center justify-center text-[#D6B887] transition-all shadow-sm active:scale-95" title="Swap Direction (RTL / LTR)" aria-label="Swap Direction">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <!-- View Mode (Theme ☼/☾) Circular Button -->
+          <button type="button" onclick="window.toggleTheme()" class="theme-toggle-btn w-9 h-9 rounded-full bg-[#D6B887] hover:bg-[#FAF0DC] flex items-center justify-center text-[#17151A] transition-all shadow-md shadow-[#D6B887]/30 active:scale-95" title="Toggle Theme (View Mode)" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+            <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- View Public Site Button -->
+      <a href="index.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:text-[#56334F] dark:text-gray-300 dark:hover:text-[#D6B887] hover:bg-gray-50 dark:hover:bg-gray-800/60 transition-colors">
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span>View Public Site</span>
+      </a>
+    </div>
+
+    <!-- Bottom User Strip -->
+    <div class="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="client-avatar-display w-9 h-9 rounded-full object-cover border border-[#D6B887]">
+        <div class="overflow-hidden">
+          <h4 class="client-name-display text-xs font-bold text-[#17151A] dark:text-[#FAF8F5] truncate">Sarah Johnson</h4>
+          <span class="text-[11px] text-gray-500 dark:text-gray-400">VIP Host</span>
+        </div>
+      </div>
+      
+      <button type="button" onclick="logoutUser()" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 flex items-center justify-center lg:justify-start gap-2 border border-rose-200/60 dark:border-rose-900/40 lg:border-transparent transition-colors">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Sign Out</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <div id="sidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
+
+  <!-- Content -->
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+    
+    <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
+        <button id="sidebarToggleBtn" class="lg:hidden p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 shrink-0" aria-label="Toggle Navigation">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <div class="min-w-0 flex-1">
+          <h1 class="text-sm sm:text-lg font-bold font-serif truncate">Notifications Center</h1>
+          <p class="hidden sm:block text-xs text-gray-500 dark:text-gray-400 truncate">Timely updates, proposal releases & reminders</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <button onclick="window.markAllNotificationsRead()" class="hidden sm:inline text-xs font-semibold text-[#56334F] dark:text-[#D6B887] hover:underline px-2 py-1">
+          Mark All Read
+        </button>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-[#D6B887]" title="Toggle Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+        </button>
+
+        <!-- RTL Toggle -->
+        <button class="rtl-toggle-btn px-2.5 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-semibold text-gray-700 dark:text-[#D6B887]" title="Toggle RTL" aria-label="Toggle RTL">
+          <span class="rtl-label">RTL</span>
+        </button>
+      </div></header>
+
+    <main class="flex-1 p-6 sm:p-10 space-y-6 max-w-4xl w-full max-w-full overflow-x-hidden">
+      
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-gray-600 dark:text-gray-400">Your recent celebration activity notifications</span>
+        <button onclick="window.sendTestNotification()" class="px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#56334F] text-xs font-semibold">
+          + Trigger Test Notification
+        </button>
+      </div>
+
+      <div id="notificationsList" class="space-y-4">
+        <!-- Rendered from Storage -->
+      </div>
+
+    </main>
+  </div>
+
+  <script src="src/js/storage.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/main.js"></script>
+  <script>
+    function renderNotifications() {
+      const list = Storage.get('lumora_notifications') || [];
+      const container = document.getElementById('notificationsList');
+      if (!container) return;
+
+      if (list.length === 0) {
+        container.innerHTML = '<div class="text-center py-12 text-xs text-gray-400">No new notifications.</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(item => `
+        <div class="p-5 rounded-3xl bg-white dark:bg-[#221E26] border ${item.unread ? 'border-l-4 border-l-[#56334F] dark:border-l-[#D6B887] border-gray-200 dark:border-gray-800' : 'border-gray-100 dark:border-gray-800 opacity-80'} shadow-sm flex items-start justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-sm text-[#17151A] dark:text-white">${item.title}</h4>
+              ${item.unread ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-[#56334F] dark:bg-[#D6B887]/20 dark:text-[#D6B887]">New</span>' : ''}
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-300">${item.message}</p>
+            <span class="text-[11px] text-gray-400 block pt-1">${item.time}</span>
+          </div>
+          <button onclick="window.dismissNotification(${item.id})" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      `).join('');
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    window.markAllNotificationsRead = function () {
+      const list = Storage.get('lumora_notifications') || [];
+      list.forEach(i => i.unread = false);
+      Storage.set('lumora_notifications', list);
+      renderNotifications();
+      showToast('All notifications marked as read.', 'info');
+    };
+
+    window.dismissNotification = function (id) {
+      let list = Storage.get('lumora_notifications') || [];
+      list = list.filter(i => i.id !== id);
+      Storage.set('lumora_notifications', list);
+      renderNotifications();
+    };
+
+    window.sendTestNotification = function () {
+      const list = Storage.get('lumora_notifications') || [];
+      list.unshift({
+        id: Date.now(),
+        title: 'Floral Scenography Finalized',
+        message: 'Master florist Elena added 150 white hydrangeas to your ballroom arch blueprint.',
+        time: 'Just now',
+        unread: true,
+        type: 'info'
+      });
+      Storage.set('lumora_notifications', list);
+      renderNotifications();
+      showToast('New notification received from Elena Laurent!', 'info');
+    };
+
+    document.addEventListener('DOMContentLoaded', renderNotifications);
+
+    
+  </script>
+</body>
+</html>
+
