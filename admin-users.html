@@ -175,54 +175,60 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-6">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 w-full max-w-full overflow-x-hidden">
       
       <!-- Users Table Card -->
-      <div class="bg-white dark:bg-[#221E26] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
         
-        <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <input type="text" id="userSearch" placeholder="Search users by name or email..." class="px-4 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-60 focus:outline-none">
-            <select class="px-3 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+        <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+          <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap w-full sm:w-auto">
+            <input type="text" id="userSearch" placeholder="Search users by name or email..." class="px-3.5 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-60 focus:outline-none focus:border-[#D6B887]">
+            <select class="px-3 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-auto focus:outline-none">
               <option>All Roles</option>
               <option>VIP Host</option>
               <option>Corporate Planner</option>
               <option>Private Host</option>
             </select>
           </div>
-          <span class="text-xs text-gray-600 dark:text-gray-400">Showing 5 active profiles</span>
+          <span class="text-[11px] text-gray-500 dark:text-gray-400 shrink-0">Showing 5 active profiles</span>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-left">
+        <!-- Mobile Scroll Hint -->
+        <div class="sm:hidden px-4 py-2 bg-gray-50/80 dark:bg-[#17151A]/80 border-b border-gray-100 dark:border-gray-800 text-[11px] text-gray-500 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-[#D6B887]"></i> Swipe table horizontally</span>
+          <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">6 Columns</span>
+        </div>
+
+        <div class="overflow-x-auto table-responsive-container">
+          <table class="w-full text-xs text-start min-w-[700px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">
-                <th class="py-3 px-6">User</th>
-                <th class="py-3 px-6">Contact</th>
-                <th class="py-3 px-6">Tier Role</th>
-                <th class="py-3 px-6">Events Planned</th>
-                <th class="py-3 px-6">Member Since</th>
-                <th class="py-3 px-6 text-right">Actions</th>
+                <th class="py-3 px-4 min-w-[190px]">User</th>
+                <th class="py-3 px-4 whitespace-nowrap">Contact</th>
+                <th class="py-3 px-4 whitespace-nowrap">Tier Role</th>
+                <th class="py-3 px-4 whitespace-nowrap">Events Planned</th>
+                <th class="py-3 px-4 whitespace-nowrap">Member Since</th>
+                <th class="py-3 px-4 text-right whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
               
               <!-- User 1 -->
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Sarah" class="w-9 h-9 rounded-full object-cover border border-[#D6B887]">
-                  <div>
-                    <strong class="block text-gray-900 dark:text-white text-xs">Sarah Johnson</strong>
-                    <span class="text-[11px] text-gray-500 dark:text-gray-400">sarah.j@example.com</span>
+                <td class="py-4 px-4 flex items-center gap-3 min-w-[190px]">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Sarah" class="w-9 h-9 rounded-full object-cover border border-[#D6B887] shrink-0">
+                  <div class="overflow-hidden">
+                    <strong class="block text-gray-900 dark:text-white text-xs truncate">Sarah Johnson</strong>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400 truncate block">sarah.j@example.com</span>
                   </div>
                 </td>
-                <td class="py-4 px-6 text-gray-500">+1 (555) 234-5678</td>
-                <td class="py-4 px-6">
+                <td class="py-4 px-4 text-gray-500 whitespace-nowrap">+1 (555) 234-5678</td>
+                <td class="py-4 px-4 whitespace-nowrap">
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#D6B887]/20 text-[#9E7A3D] dark:text-[#D6B887]">VIP Host</span>
                 </td>
-                <td class="py-4 px-6 font-bold">2 Celebrations</td>
-                <td class="py-4 px-6 text-gray-400">Mar 2025</td>
-                <td class="py-4 px-6 text-right space-x-1">
+                <td class="py-4 px-4 font-bold whitespace-nowrap">2 Celebrations</td>
+                <td class="py-4 px-4 text-gray-400 whitespace-nowrap">Mar 2025</td>
+                <td class="py-4 px-4 text-right space-x-1 whitespace-nowrap">
                   <button onclick="showToast('Profile dossier opened for Sarah Johnson', 'info')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="eye" class="w-4 h-4"></i></button>
                   <button onclick="showToast('Password reset sent to sarah.j@example.com', 'success')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="key" class="w-4 h-4"></i></button>
                 </td>
@@ -230,20 +236,20 @@
 
               <!-- User 2 -->
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Michael" class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <strong class="block text-gray-900 dark:text-white text-xs">Michael Brown</strong>
-                    <span class="text-[11px] text-gray-500 dark:text-gray-400">m.brown@techcorp.io</span>
+                <td class="py-4 px-4 flex items-center gap-3 min-w-[190px]">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Michael" class="w-9 h-9 rounded-full object-cover shrink-0">
+                  <div class="overflow-hidden">
+                    <strong class="block text-gray-900 dark:text-white text-xs truncate">Michael Brown</strong>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400 truncate block">m.brown@techcorp.io</span>
                   </div>
                 </td>
-                <td class="py-4 px-6 text-gray-500">+1 (555) 890-1234</td>
-                <td class="py-4 px-6">
+                <td class="py-4 px-4 text-gray-500 whitespace-nowrap">+1 (555) 890-1234</td>
+                <td class="py-4 px-4 whitespace-nowrap">
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">Corporate Planner</span>
                 </td>
-                <td class="py-4 px-6 font-bold">1 Celebration</td>
-                <td class="py-4 px-6 text-gray-400">Jan 2026</td>
-                <td class="py-4 px-6 text-right space-x-1">
+                <td class="py-4 px-4 font-bold whitespace-nowrap">1 Celebration</td>
+                <td class="py-4 px-4 text-gray-400 whitespace-nowrap">Jan 2026</td>
+                <td class="py-4 px-4 text-right space-x-1 whitespace-nowrap">
                   <button onclick="showToast('Profile dossier opened for Michael Brown', 'info')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="eye" class="w-4 h-4"></i></button>
                   <button onclick="showToast('Password reset sent to m.brown@techcorp.io', 'success')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="key" class="w-4 h-4"></i></button>
                 </td>
@@ -251,20 +257,20 @@
 
               <!-- User 3 -->
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Elena" class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <strong class="block text-gray-900 dark:text-white text-xs">Elena Rostova</strong>
-                    <span class="text-[11px] text-gray-500 dark:text-gray-400">elena.rostova@gmail.com</span>
+                <td class="py-4 px-4 flex items-center gap-3 min-w-[190px]">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Elena" class="w-9 h-9 rounded-full object-cover shrink-0">
+                  <div class="overflow-hidden">
+                    <strong class="block text-gray-900 dark:text-white text-xs truncate">Elena Rostova</strong>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400 truncate block">elena.rostova@gmail.com</span>
                   </div>
                 </td>
-                <td class="py-4 px-6 text-gray-500">+1 (555) 432-8765</td>
-                <td class="py-4 px-6">
+                <td class="py-4 px-4 text-gray-500 whitespace-nowrap">+1 (555) 432-8765</td>
+                <td class="py-4 px-4 whitespace-nowrap">
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Private Host</span>
                 </td>
-                <td class="py-4 px-6 font-bold">1 Celebration</td>
-                <td class="py-4 px-6 text-gray-400">Nov 2026</td>
-                <td class="py-4 px-6 text-right space-x-1">
+                <td class="py-4 px-4 font-bold whitespace-nowrap">1 Celebration</td>
+                <td class="py-4 px-4 text-gray-400 whitespace-nowrap">Nov 2026</td>
+                <td class="py-4 px-4 text-right space-x-1 whitespace-nowrap">
                   <button onclick="showToast('Profile dossier opened for Elena Rostova', 'info')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="eye" class="w-4 h-4"></i></button>
                   <button onclick="showToast('Password reset sent to elena.rostova@gmail.com', 'success')" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"><i data-lucide="key" class="w-4 h-4"></i></button>
                 </td>

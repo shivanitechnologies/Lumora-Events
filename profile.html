@@ -164,14 +164,14 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-8 max-w-4xl w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 max-w-4xl w-full max-w-full overflow-x-hidden">
       
       <!-- Profile Header Card -->
-      <div class="p-8 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row items-center gap-6">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="client-avatar-display w-24 h-24 rounded-full object-cover border-4 border-[#D6B887]/50 shadow-md">
+      <div class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="client-avatar-display w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-[#D6B887]/50 shadow-md">
         <div class="text-center sm:text-left space-y-1">
           <div class="flex items-center justify-center sm:justify-start gap-2">
-            <h2 class="client-name-display font-serif text-2xl font-bold">Sarah Johnson</h2>
+            <h2 class="client-name-display font-serif text-xl sm:text-2xl font-bold">Sarah Johnson</h2>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#D6B887]/20 text-[#D6B887] border border-[#D6B887]/40">VIP Host</span>
           </div>
           <p class="client-email-display text-xs text-gray-500">sarah.j@example.com</p>
@@ -180,10 +180,10 @@
       </div>
 
       <!-- Profile Form -->
-      <form id="profileForm" class="bg-white dark:bg-[#221E26] rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
-        <h3 class="font-serif text-lg font-bold border-b border-gray-100 dark:border-gray-800 pb-3">Personal Details</h3>
+      <form id="profileForm" class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-5 sm:space-y-6">
+        <h3 class="font-serif text-base sm:text-lg font-bold border-b border-gray-100 dark:border-gray-800 pb-3">Personal Details</h3>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 text-xs">
           <div>
             <label class="block font-bold mb-1.5">Full Name</label>
             <input type="text" id="profName" value="Sarah Johnson" required class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
@@ -206,9 +206,9 @@
           </div>
         </div>
 
-        <h3 class="font-serif text-lg font-bold border-b border-gray-100 dark:border-gray-800 pb-3 pt-4">Celebration Preferences</h3>
+        <h3 class="font-serif text-base sm:text-lg font-bold border-b border-gray-100 dark:border-gray-800 pb-3 pt-3 sm:pt-4">Celebration Preferences</h3>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 text-xs">
           <div>
             <label class="block font-bold mb-1.5">Favorite Theme Aesthetic</label>
             <input type="text" value="Royal Gold & Champagne / Pastel Dream" class="w-full p-3 rounded-xl bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
@@ -220,7 +220,7 @@
         </div>
 
         <div class="pt-4 flex justify-end">
-          <button type="submit" class="btn-primary text-xs py-3 px-6">
+          <button type="submit" class="btn-primary text-xs py-3 px-6 w-full sm:w-auto">
             Save Profile Preferences
           </button>
         </div>

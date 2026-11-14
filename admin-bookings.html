@@ -171,35 +171,41 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-6">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 w-full max-w-full overflow-x-hidden">
       
-      <div class="bg-white dark:bg-[#221E26] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
         
-        <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="flex items-center gap-3 flex-wrap">
-            <input type="text" id="adminBookingSearch" placeholder="Search by name, event or ID..." class="px-4 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-60 focus:outline-none">
+        <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+          <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap w-full sm:w-auto">
+            <input type="text" id="adminBookingSearch" placeholder="Search by name, event or ID..." class="px-3.5 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-60 focus:outline-none focus:border-[#D6B887]">
             
-            <select id="adminStatusFilter" class="px-3 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700">
+            <select id="adminStatusFilter" class="px-3 py-2 rounded-xl text-xs bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 w-full sm:w-auto focus:outline-none">
               <option value="all">All Statuses</option>
               <option value="Confirmed">Confirmed</option>
               <option value="Pending">Pending</option>
               <option value="In Progress">In Progress</option>
             </select>
           </div>
-          <span class="text-xs text-gray-600 dark:text-gray-400">Live localStorage Synced</span>
+          <span class="text-[11px] text-gray-500 dark:text-gray-400 shrink-0">Live localStorage Synced</span>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-left">
+        <!-- Mobile Scroll Hint -->
+        <div class="sm:hidden px-4 py-2 bg-gray-50/80 dark:bg-[#17151A]/80 border-b border-gray-100 dark:border-gray-800 text-[11px] text-gray-500 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-[#D6B887]"></i> Swipe table horizontally</span>
+          <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">7 Columns</span>
+        </div>
+
+        <div class="overflow-x-auto table-responsive-container">
+          <table class="w-full text-xs text-start min-w-[780px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">
-                <th class="py-3 px-4">Booking ID</th>
-                <th class="py-3 px-4">Celebration</th>
-                <th class="py-3 px-4">Client Contact</th>
-                <th class="py-3 px-4">Event Date & Venue</th>
-                <th class="py-3 px-4">Investment</th>
-                <th class="py-3 px-4">Status</th>
-                <th class="py-3 px-4 text-right">Quick Actions</th>
+                <th class="py-3 px-4 whitespace-nowrap">Booking ID</th>
+                <th class="py-3 px-4 min-w-[180px]">Celebration</th>
+                <th class="py-3 px-4 min-w-[160px]">Client Contact</th>
+                <th class="py-3 px-4 whitespace-nowrap">Event Date & Venue</th>
+                <th class="py-3 px-4 whitespace-nowrap">Investment</th>
+                <th class="py-3 px-4 whitespace-nowrap">Status</th>
+                <th class="py-3 px-4 text-right whitespace-nowrap">Quick Actions</th>
               </tr>
             </thead>
             <tbody id="adminBookingsTableBody" class="divide-y divide-gray-100 dark:divide-gray-800">

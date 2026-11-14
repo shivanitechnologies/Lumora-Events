@@ -174,78 +174,84 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-6 w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 w-full max-w-full overflow-x-hidden">
       
       <!-- Metrics -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
           <span class="text-xs text-gray-600 dark:text-gray-400">Total Demonstration Volume</span>
-          <div class="font-serif text-3xl font-bold mt-1 text-emerald-600">$420,850</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-emerald-600">$420,850</div>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">Across 980 total contracts</span>
         </div>
-        <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
           <span class="text-xs text-gray-600 dark:text-gray-400">Pending Installments Due</span>
-          <div class="font-serif text-3xl font-bold mt-1 text-amber-500">$14,500</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-amber-500">$14,500</div>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">Scheduled for November & December</span>
         </div>
-        <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
           <span class="text-xs text-gray-600 dark:text-gray-400">Avg. Margin</span>
-          <div class="font-serif text-3xl font-bold mt-1 text-[#56334F] dark:text-[#D6B887]">68.5%</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-[#56334F] dark:text-[#D6B887]">68.5%</div>
           <span class="text-[11px] text-emerald-600 font-semibold">High luxury production efficiency</span>
         </div>
       </div>
 
       <!-- Ledger Table -->
-      <div class="bg-white dark:bg-[#221E26] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
-        <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
-          <h3 class="font-serif text-lg font-bold">Transaction Ledger</h3>
-          <span class="text-xs text-gray-600 dark:text-gray-400">Frontend Simulation Only</span>
+      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+          <h3 class="font-serif text-base sm:text-lg font-bold">Transaction Ledger</h3>
+          <span class="text-[11px] text-gray-500 dark:text-gray-400">Frontend Simulation Only</span>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-left">
+        <!-- Mobile Scroll Hint -->
+        <div class="sm:hidden px-4 py-2 bg-gray-50/80 dark:bg-[#17151A]/80 border-b border-gray-100 dark:border-gray-800 text-[11px] text-gray-500 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-[#D6B887]"></i> Swipe table horizontally</span>
+          <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">6 Columns</span>
+        </div>
+
+        <div class="overflow-x-auto table-responsive-container">
+          <table class="w-full text-xs text-start min-w-[680px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">
-                <th class="py-3 px-6">Transaction ID</th>
-                <th class="py-3 px-6">Client Host</th>
-                <th class="py-3 px-6">Celebration</th>
-                <th class="py-3 px-6">Installment Phase</th>
-                <th class="py-3 px-6">Amount</th>
-                <th class="py-3 px-6">Status</th>
+                <th class="py-3 px-4 whitespace-nowrap">Transaction ID</th>
+                <th class="py-3 px-4 whitespace-nowrap">Client Host</th>
+                <th class="py-3 px-4 min-w-[170px]">Celebration</th>
+                <th class="py-3 px-4 whitespace-nowrap">Installment Phase</th>
+                <th class="py-3 px-4 whitespace-nowrap">Amount</th>
+                <th class="py-3 px-4 whitespace-nowrap">Status</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 font-mono text-[#D6B887] font-semibold">TXN-9021</td>
-                <td class="py-4 px-6 font-bold">Sarah Johnson</td>
-                <td class="py-4 px-6 text-gray-500">30th Golden Jubilee Birthday</td>
-                <td class="py-4 px-6">Initial 30% Retainer</td>
-                <td class="py-4 px-6 font-bold text-emerald-600">$1,000.00</td>
-                <td class="py-4 px-6"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Completed</span></td>
+                <td class="py-4 px-4 font-mono text-[#D6B887] font-semibold whitespace-nowrap">TXN-9021</td>
+                <td class="py-4 px-4 font-bold whitespace-nowrap">Sarah Johnson</td>
+                <td class="py-4 px-4 text-gray-500">30th Golden Jubilee Birthday</td>
+                <td class="py-4 px-4 whitespace-nowrap">Initial 30% Retainer</td>
+                <td class="py-4 px-4 font-bold text-emerald-600 whitespace-nowrap">$1,000.00</td>
+                <td class="py-4 px-4 whitespace-nowrap"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Completed</span></td>
               </tr>
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 font-mono text-[#D6B887] font-semibold">TXN-9044</td>
-                <td class="py-4 px-6 font-bold">Sarah Johnson</td>
-                <td class="py-4 px-6 text-gray-500">Sunset Seaside Anniversary</td>
-                <td class="py-4 px-6">Beachfront Permit Deposit</td>
-                <td class="py-4 px-6 font-bold text-emerald-600">$1,500.00</td>
-                <td class="py-4 px-6"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Completed</span></td>
+                <td class="py-4 px-4 font-mono text-[#D6B887] font-semibold whitespace-nowrap">TXN-9044</td>
+                <td class="py-4 px-4 font-bold whitespace-nowrap">Sarah Johnson</td>
+                <td class="py-4 px-4 text-gray-500">Sunset Seaside Anniversary</td>
+                <td class="py-4 px-4 whitespace-nowrap">Beachfront Permit Deposit</td>
+                <td class="py-4 px-4 font-bold text-emerald-600 whitespace-nowrap">$1,500.00</td>
+                <td class="py-4 px-4 whitespace-nowrap"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Completed</span></td>
               </tr>
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 font-mono text-[#D6B887] font-semibold">TXN-9052</td>
-                <td class="py-4 px-6 font-bold">Michael Brown</td>
-                <td class="py-4 px-6 text-gray-500">Annual Innovation Summit</td>
-                <td class="py-4 px-6">AV & Staging Retainer</td>
-                <td class="py-4 px-6 font-bold text-emerald-600">$2,600.00</td>
-                <td class="py-4 px-6"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Completed</span></td>
+                <td class="py-4 px-4 font-mono text-[#D6B887] font-semibold whitespace-nowrap">TXN-9052</td>
+                <td class="py-4 px-4 font-bold whitespace-nowrap">Michael Brown</td>
+                <td class="py-4 px-4 text-gray-500">Annual Innovation Summit</td>
+                <td class="py-4 px-4 whitespace-nowrap">AV & Staging Retainer</td>
+                <td class="py-4 px-4 font-bold text-emerald-600 whitespace-nowrap">$2,600.00</td>
+                <td class="py-4 px-4 whitespace-nowrap"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Completed</span></td>
               </tr>
               <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                <td class="py-4 px-6 font-mono text-gray-400 font-semibold">TXN-9088</td>
-                <td class="py-4 px-6 font-bold">Elena Rostova</td>
-                <td class="py-4 px-6 text-gray-500">Pastel Dreams Welcome Shower</td>
-                <td class="py-4 px-6">Botanical Floristry Deposit</td>
-                <td class="py-4 px-6 font-bold text-amber-500">$500.00</td>
-                <td class="py-4 px-6"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Pending Receipt</span></td>
+                <td class="py-4 px-4 font-mono text-gray-400 font-semibold whitespace-nowrap">TXN-9088</td>
+                <td class="py-4 px-4 font-bold whitespace-nowrap">Elena Rostova</td>
+                <td class="py-4 px-4 text-gray-500">Pastel Dreams Welcome Shower</td>
+                <td class="py-4 px-4 whitespace-nowrap">Botanical Floristry Deposit</td>
+                <td class="py-4 px-4 font-bold text-amber-500 whitespace-nowrap">$500.00</td>
+                <td class="py-4 px-4 whitespace-nowrap"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Pending Receipt</span></td>
               </tr>
             </tbody>
           </table>

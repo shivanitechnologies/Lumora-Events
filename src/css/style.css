@@ -210,16 +210,48 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 8px 25px rgba(214, 184, 135, 0.45);
 }
 
-/* RTL Specific Overrides */
+/* RTL Specific Overrides & Viewport Protections */
 [dir="rtl"] {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  text-align: right;
+  text-align: start;
+}
+[dir="rtl"] body {
+  overflow-x: hidden;
+  direction: rtl;
 }
 [dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
 }
 [dir="rtl"] .rotate-rtl {
   transform: scaleX(-1);
+}
+[dir="rtl"] table {
+  text-align: start;
+}
+[dir="rtl"] th, [dir="rtl"] td {
+  text-align: start;
+}
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+/* Mobile Table & Scroll Helpers */
+.table-responsive-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Wave Dividers */
@@ -541,6 +573,47 @@ h1, h2, h3, h4, .font-serif {
   color: #17151A !important;
   box-shadow: 0 2px 12px rgba(214, 184, 135, 0.4) !important;
 }
+
+/* Mobile Panorama Controls Optimization */
+@media (max-width: 640px) {
+  .pano-controls-bar {
+    padding: 0.625rem 0.5rem !important;
+    gap: 0.625rem !important;
+    border-radius: 1.25rem !important;
+  }
+  .pano-venue-tabs-wrap {
+    display: flex !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+    padding: 0.25rem 0.125rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .pano-venue-tabs-wrap::-webkit-scrollbar {
+    display: none !important;
+  }
+  .pano-venue-tab {
+    flex-shrink: 0 !important;
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 0.75rem !important;
+    white-space: nowrap !important;
+  }
+  .day-night-toggle-wrap {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0.25rem !important;
+  }
+  .day-night-toggle-btn {
+    flex: 1 !important;
+    justify-content: center !important;
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
 
 /* Active Navbar Indicator (Golden Glow Underline) */
 .nav-active-link {

@@ -171,28 +171,28 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-10 w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-10 w-full max-w-full overflow-x-hidden">
       
       <!-- Section 1: Wedding Package Rates Management -->
       <div class="space-y-4">
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h3 class="font-serif text-xl sm:text-2xl font-bold">Wedding Experience Package Rates</h3>
+            <h3 class="font-serif text-lg sm:text-2xl font-bold">Wedding Experience Package Rates</h3>
             <p class="text-xs text-gray-500 dark:text-gray-400">Configure base rates, guest scales, and live pricing for the 4 wedding tiers</p>
           </div>
-          <button id="adminSaveAllPackagesBtn" class="btn-primary text-xs py-2 px-4 shadow-md flex items-center gap-1.5">
+          <button id="adminSaveAllPackagesBtn" class="btn-primary text-xs py-2 px-4 shadow-md flex items-center gap-1.5 self-start sm:self-auto">
             <i data-lucide="save" class="w-3.5 h-3.5"></i>
             <span>Save All Rates</span>
           </button>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
           <!-- Essential Wedding -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+          <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
             <div>
               <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 1 • Intimate</span>
-              <h4 class="font-serif text-lg font-bold mt-1">Essential Wedding</h4>
+              <h4 class="font-serif text-base sm:text-lg font-bold mt-1">Essential Wedding</h4>
               <div class="flex items-center gap-2 mt-3">
                 <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
                 <input id="adminRateEssential" type="number" value="2500" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
@@ -204,7 +204,7 @@
           </div>
 
           <!-- Luxury Wedding (Featured) -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border-2 border-[#56334F] dark:border-[#D6B887] shadow-md space-y-3 flex flex-col justify-between relative">
+          <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border-2 border-[#56334F] dark:border-[#D6B887] shadow-md space-y-3 flex flex-col justify-between relative">
             <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#D6B887] text-[#17151A]">Signature</span>
             <div>
               <span class="text-xs text-[#D6B887] font-bold uppercase tracking-wider block">Tier 2 • Most Popular</span>
@@ -220,10 +220,10 @@
           </div>
 
           <!-- Royal Wedding -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+          <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
             <div>
               <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 3 • Palatial</span>
-              <h4 class="font-serif text-lg font-bold mt-1">Royal Wedding</h4>
+              <h4 class="font-serif text-base sm:text-lg font-bold mt-1">Royal Wedding</h4>
               <div class="flex items-center gap-2 mt-3">
                 <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
                 <input id="adminRateRoyal" type="number" value="12500" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">
@@ -235,10 +235,10 @@
           </div>
 
           <!-- Bespoke Signature -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
+          <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm space-y-3 flex flex-col justify-between">
             <div>
               <span class="text-xs text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider block">Tier 4 • Haute Couture</span>
-              <h4 class="font-serif text-lg font-bold mt-1">Bespoke Signature</h4>
+              <h4 class="font-serif text-base sm:text-lg font-bold mt-1">Bespoke Signature</h4>
               <div class="flex items-center gap-2 mt-3">
                 <span class="font-serif text-2xl font-bold text-[#56334F] dark:text-[#D6B887]">$</span>
                 <input id="adminRateBespoke" type="number" value="25000" class="w-28 p-2 rounded-xl text-lg font-serif font-bold bg-gray-50 dark:bg-[#17151A] border border-gray-200 dark:border-gray-700 text-white">

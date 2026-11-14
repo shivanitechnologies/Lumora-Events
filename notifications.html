@@ -162,16 +162,16 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-6 sm:p-10 space-y-6 max-w-4xl w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 max-w-4xl w-full max-w-full overflow-x-hidden">
       
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <span class="text-xs text-gray-600 dark:text-gray-400">Your recent celebration activity notifications</span>
-        <button onclick="window.sendTestNotification()" class="px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#56334F] text-xs font-semibold">
+        <button onclick="window.sendTestNotification()" class="self-start sm:self-auto px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#56334F] text-xs font-semibold">
           + Trigger Test Notification
         </button>
       </div>
 
-      <div id="notificationsList" class="space-y-4">
+      <div id="notificationsList" class="space-y-3.5 sm:space-y-4">
         <!-- Rendered from Storage -->
       </div>
 

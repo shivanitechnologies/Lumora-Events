@@ -168,40 +168,40 @@
     <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 max-w-5xl w-full overflow-x-hidden">
       
       <!-- Stepper Wizard Progress Indicators -->
-      <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3 px-1 sm:px-2 w-full max-w-full overflow-hidden">
         
-        <div class="wizard-step-indicator flex items-center gap-2 cursor-default" data-step="1">
-          <div class="step-circle w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs bg-[#56334F] text-white">1</div>
+        <div class="wizard-step-indicator flex items-center gap-1.5 sm:gap-2 cursor-default shrink-0" data-step="1">
+          <div class="step-circle w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs bg-[#56334F] text-white">1</div>
           <span class="text-xs font-bold hidden sm:inline">Event & Venue</span>
         </div>
 
-        <div class="h-0.5 flex-1 bg-gray-200 dark:bg-gray-800 mx-2"></div>
+        <div class="h-0.5 flex-1 min-w-[8px] sm:min-w-[20px] bg-gray-200 dark:bg-gray-800 mx-1 sm:mx-2"></div>
 
-        <div class="wizard-step-indicator flex items-center gap-2 cursor-default" data-step="2">
-          <div class="step-circle w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">2</div>
+        <div class="wizard-step-indicator flex items-center gap-1.5 sm:gap-2 cursor-default shrink-0" data-step="2">
+          <div class="step-circle w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">2</div>
           <span class="text-xs font-bold hidden sm:inline">Date & Scale</span>
         </div>
 
-        <div class="h-0.5 flex-1 bg-gray-200 dark:bg-gray-800 mx-2"></div>
+        <div class="h-0.5 flex-1 min-w-[8px] sm:min-w-[20px] bg-gray-200 dark:bg-gray-800 mx-1 sm:mx-2"></div>
 
-        <div class="wizard-step-indicator flex items-center gap-2 cursor-default" data-step="3">
-          <div class="step-circle w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">3</div>
+        <div class="wizard-step-indicator flex items-center gap-1.5 sm:gap-2 cursor-default shrink-0" data-step="3">
+          <div class="step-circle w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">3</div>
           <span class="text-xs font-bold hidden sm:inline">Theme & Package</span>
         </div>
 
-        <div class="h-0.5 flex-1 bg-gray-200 dark:bg-gray-800 mx-2"></div>
+        <div class="h-0.5 flex-1 min-w-[8px] sm:min-w-[20px] bg-gray-200 dark:bg-gray-800 mx-1 sm:mx-2"></div>
 
-        <div class="wizard-step-indicator flex items-center gap-2 cursor-default" data-step="4">
-          <div class="step-circle w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">4</div>
+        <div class="wizard-step-indicator flex items-center gap-1.5 sm:gap-2 cursor-default shrink-0" data-step="4">
+          <div class="step-circle w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs bg-gray-200 text-gray-500">4</div>
           <span class="text-xs font-bold hidden sm:inline">Food & Review</span>
         </div>
 
       </div>
 
       <!-- Main Booking Wizard Form -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
-        <div class="lg:col-span-8 bg-white dark:bg-[#221E26] rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="lg:col-span-8 bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
           
           <form id="lumoraBookingForm" class="space-y-6">
             
@@ -386,7 +386,7 @@
         </div>
 
         <!-- Sticky Live Calculation Summary Box -->
-        <div class="lg:col-span-4 bg-white dark:bg-[#221E26] rounded-3xl p-6 border border-[#D6B887]/40 shadow-xl space-y-5">
+        <div class="lg:col-span-4 bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-[#D6B887]/40 shadow-xl space-y-4 sm:space-y-5">
           <div class="pb-3 border-b border-gray-100 dark:border-gray-800">
             <span class="text-xs uppercase font-bold tracking-wider text-[#D6B887]">Live Event Dossier</span>
             <h4 class="font-serif text-lg font-bold mt-1">Estimate Breakdown</h4>

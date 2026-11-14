@@ -236,26 +236,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return `
           <tr class="border-b border-gray-100 dark:border-gray-800/60 hover:bg-gray-50/50 dark:hover:bg-gray-800/20 transition-colors">
-            <td class="py-3 px-4 font-mono text-xs font-semibold text-[#D6B887]">${b.id}</td>
-            <td class="py-3 px-4">
+            <td class="py-3 px-4 font-mono text-xs font-semibold text-[#D6B887] whitespace-nowrap">${b.id}</td>
+            <td class="py-3 px-4 min-w-[200px]">
               <div class="font-bold text-sm text-gray-900 dark:text-gray-100">${b.eventName}</div>
-              <div class="text-xs text-gray-500">${b.eventType} • ${b.guests} guests</div>
+              <div class="text-xs text-gray-500 whitespace-nowrap">${b.eventType} • ${b.guests} guests</div>
             </td>
-            <td class="py-3 px-4">
+            <td class="py-3 px-4 min-w-[170px]">
               <div class="text-xs font-semibold text-gray-800 dark:text-gray-200">${b.customerName}</div>
-              <div class="text-[11px] text-gray-400">${b.customerEmail}</div>
+              <div class="text-[11px] text-gray-400 whitespace-nowrap">${b.customerEmail}</div>
             </td>
-            <td class="py-3 px-4 text-xs text-gray-600 dark:text-gray-300">
+            <td class="py-3 px-4 text-xs text-gray-600 dark:text-gray-300 whitespace-nowrap">
               <div>${b.date}</div>
               <div class="text-[11px] text-gray-400 truncate max-w-[150px]">${b.location}</div>
             </td>
-            <td class="py-3 px-4 font-semibold text-xs text-[#56334F] dark:text-[#D6B887]">
+            <td class="py-3 px-4 font-semibold text-xs text-[#56334F] dark:text-[#D6B887] whitespace-nowrap">
               $${b.price.toLocaleString()}
             </td>
-            <td class="py-3 px-4">
+            <td class="py-3 px-4 whitespace-nowrap">
               <span class="px-2.5 py-1 text-[11px] font-semibold rounded-full ${badgeColor}">${b.status}</span>
             </td>
-            <td class="py-3 px-4 text-right">
+            <td class="py-3 px-4 text-right whitespace-nowrap">
               <div class="flex items-center justify-end gap-1.5">
                 <button onclick="window.adminChangeStatus('${b.id}', 'Confirmed')" class="p-1.5 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-emerald-600" title="Confirm Booking">
                   <i data-lucide="check" class="w-4 h-4"></i>
