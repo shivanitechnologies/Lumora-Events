@@ -88,8 +88,3 @@
 
 Simply double-click or open [`index.html`](file:///d:/Stackly/Event%20&%20birthday%20planners/index.html) in any modern web browser (Chrome, Edge, Safari, Firefox).  
 No build tools, Node.js server, or compilation is required.
-
-# Lumora-Events
-
-#   L u m o r a - E v e n t s  
- 
