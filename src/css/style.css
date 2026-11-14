@@ -30,8 +30,9 @@ html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   color-scheme: light dark;
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
 }
 
 /* Global Canvas & Chart.js Fluid Constraints */
@@ -43,7 +44,23 @@ body {
   background-color: var(--bg-light);
   color: var(--text-primary-light);
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  position: relative;
+}
+
+/* Strict mobile containment: prevent direct body flex children from expanding viewport */
+body > div {
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Enforce fluid main and content containers */
+main, main > * {
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 .dark body {
@@ -240,11 +257,15 @@ h1, h2, h3, h4, .font-serif {
 
 /* Mobile Table & Scroll Helpers */
 .table-responsive-container {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  display: block !important;
   position: relative;
+}
+[dir="rtl"] .table-responsive-container {
+  direction: rtl;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

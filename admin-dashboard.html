@@ -33,7 +33,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden transition-colors duration-300">
 
   <!-- ADMIN SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
   <aside id="adminSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
@@ -141,7 +141,7 @@
   <div id="adminSidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
 
   <!-- ADMIN MAIN CONTENT AREA -->
-  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 w-full max-w-full overflow-x-hidden">
     
     <!-- Top Navigation -->
     <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
@@ -173,10 +173,10 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 min-w-0 w-full max-w-full overflow-x-hidden">
       
       <!-- 3 Top Metric Cards (Exactly Matching Mockup Image) -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 min-w-0 w-full max-w-full">
         
         <!-- Total Users: 2,540 -->
         <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-between">
@@ -257,7 +257,7 @@
       </div>
 
       <!-- RECENT BOOKINGS TABLE (Matching Mockup with Statuses) -->
-      <div class="bg-white dark:bg-[#221E26] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div class="bg-white dark:bg-[#221E26] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden min-w-0 w-full max-w-full">
         
         <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -283,17 +283,23 @@
           </div>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-left">
+        <!-- Mobile Scroll Hint -->
+        <div class="sm:hidden px-4 py-2 bg-gray-50/80 dark:bg-[#17151A]/80 border-b border-gray-100 dark:border-gray-800 text-[11px] text-gray-500 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-[#D6B887]"></i> Swipe table horizontally</span>
+          <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">7 Columns</span>
+        </div>
+
+        <div class="overflow-x-auto table-responsive-container w-full max-w-full">
+          <table class="w-full text-xs text-left min-w-[700px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">
-                <th class="py-3 px-4">Booking ID</th>
-                <th class="py-3 px-4">Celebration</th>
-                <th class="py-3 px-4">Client Contact</th>
-                <th class="py-3 px-4">Event Date & Venue</th>
-                <th class="py-3 px-4">Investment</th>
-                <th class="py-3 px-4">Status</th>
-                <th class="py-3 px-4 text-right">Quick Actions</th>
+                <th class="py-3 px-4 whitespace-nowrap">Booking ID</th>
+                <th class="py-3 px-4 min-w-[160px]">Celebration</th>
+                <th class="py-3 px-4 min-w-[150px]">Client Contact</th>
+                <th class="py-3 px-4 whitespace-nowrap">Event Date & Venue</th>
+                <th class="py-3 px-4 whitespace-nowrap">Investment</th>
+                <th class="py-3 px-4 whitespace-nowrap">Status</th>
+                <th class="py-3 px-4 text-right whitespace-nowrap">Quick Actions</th>
               </tr>
             </thead>
             <tbody id="adminBookingsTableBody" class="divide-y divide-gray-100 dark:divide-gray-800">

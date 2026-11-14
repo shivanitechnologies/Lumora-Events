@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden transition-colors duration-300">
 
   <!-- ADMIN SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
   <aside id="adminSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
@@ -140,7 +140,7 @@
   <div id="adminSidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
 
   <!-- Content -->
-  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 w-full max-w-full overflow-x-hidden">
     
     <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
       <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
@@ -174,21 +174,21 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 min-w-0 w-full max-w-full overflow-x-hidden">
       
       <!-- Metrics -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 min-w-0 w-full max-w-full">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Total Demonstration Volume</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-emerald-600">$420,850</div>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">Across 980 total contracts</span>
         </div>
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Pending Installments Due</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-amber-500">$14,500</div>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">Scheduled for November & December</span>
         </div>
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Avg. Margin</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-[#56334F] dark:text-[#D6B887]">68.5%</div>
           <span class="text-[11px] text-emerald-600 font-semibold">High luxury production efficiency</span>
@@ -196,7 +196,7 @@
       </div>
 
       <!-- Ledger Table -->
-      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden min-w-0 w-full max-w-full">
         <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
           <h3 class="font-serif text-base sm:text-lg font-bold">Transaction Ledger</h3>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">Frontend Simulation Only</span>
@@ -208,7 +208,7 @@
           <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">6 Columns</span>
         </div>
 
-        <div class="overflow-x-auto table-responsive-container">
+        <div class="overflow-x-auto table-responsive-container w-full max-w-full">
           <table class="w-full text-xs text-start min-w-[680px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">

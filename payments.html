@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden transition-colors duration-300">
 
   <!-- Sidebar -->
   <!-- CLIENT SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
@@ -133,7 +133,7 @@
   <div id="sidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
 
   <!-- Content -->
-  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 w-full max-w-full overflow-x-hidden">
     
     <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
       <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
@@ -164,10 +164,10 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 max-w-5xl w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 max-w-5xl min-w-0 w-full max-w-full overflow-x-hidden">
       
       <!-- Demonstration Notice Banner -->
-      <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-start gap-2.5 sm:gap-3 text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+      <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-start gap-2.5 sm:gap-3 text-xs text-amber-800 dark:text-amber-200 leading-relaxed min-w-0 w-full max-w-full">
         <i data-lucide="info" class="w-4 h-4 flex-shrink-0 text-amber-600 mt-0.5"></i>
         <div>
           <strong>Frontend Demonstration Mode:</strong> All transactions are simulated for review purposes. No real bank accounts or credit cards are charged.
@@ -175,20 +175,20 @@
       </div>
 
       <!-- Financial Summary Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 min-w-0 w-full max-w-full">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Total Event Contract</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-[#17151A] dark:text-white">$5,440.00</div>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">2 active celebrations</span>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Settled to Date</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-emerald-600">$2,500.00</div>
           <span class="text-[11px] text-emerald-600 font-semibold">2 Milestones Paid ✓</span>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm min-w-0">
           <span class="text-xs text-gray-600 dark:text-gray-400">Remaining Balance</span>
           <div class="font-serif text-2xl sm:text-3xl font-bold mt-1 text-[#56334F] dark:text-[#D6B887]">$2,940.00</div>
           <span class="text-[11px] text-amber-500 font-semibold">Next: Nov 21st, 2026</span>
@@ -196,7 +196,7 @@
       </div>
 
       <!-- Installment Schedule Table -->
-      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div class="bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden min-w-0 w-full max-w-full">
         <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
           <h3 class="font-serif text-base sm:text-lg font-bold">Installment Milestones & Ledger</h3>
           <span class="text-[11px] text-gray-500 dark:text-gray-400">3-Part Staged Invoicing</span>
@@ -208,7 +208,7 @@
           <span class="text-[10px] text-[#D6B887] font-bold uppercase tracking-wider">6 Columns</span>
         </div>
 
-        <div class="overflow-x-auto table-responsive-container">
+        <div class="overflow-x-auto table-responsive-container w-full max-w-full">
           <table class="w-full text-xs text-start min-w-[650px]">
             <thead>
               <tr class="border-b border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold text-[10px]">

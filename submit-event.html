@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden transition-colors duration-300">
 
   <!-- Sidebar -->
   <!-- CLIENT SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
@@ -133,7 +133,7 @@
   <div id="sidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
 
   <!-- Content -->
-  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 w-full max-w-full overflow-x-hidden">
     
     <!-- Top Bar -->
     <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
@@ -165,7 +165,7 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 max-w-5xl w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 max-w-5xl min-w-0 w-full max-w-full overflow-x-hidden">
       
       <!-- Stepper Wizard Progress Indicators -->
       <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3 px-1 sm:px-2 w-full max-w-full overflow-hidden">
@@ -199,7 +199,7 @@
       </div>
 
       <!-- Main Booking Wizard Form -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start min-w-0 w-full max-w-full">
         
         <div class="lg:col-span-8 bg-white dark:bg-[#221E26] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
           

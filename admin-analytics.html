@@ -33,7 +33,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex transition-colors duration-300">
+<body class="bg-[#FAF8F5] dark:bg-[#17151A] text-[#17151A] dark:text-[#FAF8F5] min-h-screen flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden transition-colors duration-300">
 
   <!-- ADMIN SIDEBAR (Full Screen on Mobile / 64-col on Desktop) -->
   <aside id="adminSidebar" class="w-full lg:w-64 bg-white dark:bg-[#221E26] border-r border-gray-100 dark:border-gray-800 flex flex-col justify-between p-6 fixed inset-0 lg:inset-y-0 lg:left-0 z-50 lg:z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
@@ -141,7 +141,7 @@
   <div id="adminSidebarBackdrop" class="hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden"></div>
 
   <!-- Main Content -->
-  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+  <div class="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 w-full max-w-full overflow-x-hidden">
     <header class="min-h-[4rem] sm:min-h-[5rem] py-2 sm:py-0 bg-white/80 dark:bg-[#221E26]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-3.5 sm:px-8 flex items-center justify-between sticky top-0 z-20">
       <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-2">
         <button id="adminSidebarToggleBtn" class="lg:hidden p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 shrink-0" aria-label="Toggle Navigation">
@@ -171,10 +171,10 @@
         </button>
       </div></header>
 
-    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 w-full max-w-full overflow-x-hidden">
+    <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 min-w-0 w-full max-w-full overflow-x-hidden">
       
       <!-- Conversion & Performance Stats -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 min-w-0 w-full max-w-full">
         <div class="p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#221E26] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
           <span class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-semibold block truncate">Inquiry Conversion</span>
           <div class="font-serif text-xl sm:text-2xl font-bold mt-1 text-emerald-600">38.4%</div>
