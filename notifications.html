@@ -133,11 +133,10 @@
           <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
         </button>
 
-        <!-- Layout Direction Segmented Toggle (LTR / RTL) -->
-        <div class="rtl-segmented-toggle inline-flex items-center p-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700 text-xs font-semibold select-none" title="Toggle Layout Direction (LTR / RTL)">
-          <button type="button" onclick="window.setRTL('ltr')" class="rtl-btn-ltr px-2.5 py-1 rounded-full transition-all duration-200" aria-label="Set Left-to-Right Direction">LTR</button>
-          <button type="button" onclick="window.setRTL('rtl')" class="rtl-btn-rtl px-2.5 py-1 rounded-full transition-all duration-200" aria-label="Set Right-to-Left Direction">RTL</button>
-        </div>
+        <!-- RTL ⇄ Circular Button -->
+        <button type="button" onclick="window.toggleRTL()" class="rtl-toggle-btn w-9 h-9 rounded-full border border-[#D6B887] bg-white/5 dark:bg-white/5 hover:bg-[#D6B887]/15 flex items-center justify-center text-[#D6B887] transition-all shadow-sm active:scale-95" title="Toggle RTL Direction" aria-label="Toggle RTL Direction">
+          <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+        </button>
       </div></header>
 
     <main class="flex-1 p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 max-w-4xl min-w-0 w-full max-w-full overflow-x-hidden">
