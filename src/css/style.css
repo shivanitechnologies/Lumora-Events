@@ -244,6 +244,7 @@ h1, h2, h3, h4, .font-serif {
 }
 [dir="rtl"] table {
   text-align: start;
+  direction: rtl;
 }
 [dir="rtl"] th, [dir="rtl"] td {
   text-align: start;
@@ -253,6 +254,33 @@ h1, h2, h3, h4, .font-serif {
 }
 [dir="rtl"] .text-left {
   text-align: right;
+}
+
+/* RTL Desktop Dashboard Layout Support (Prevents Sidebar Collision & 16rem Void) */
+@media (min-width: 1024px) {
+  [dir="rtl"] #adminSidebar,
+  [dir="rtl"] #clientSidebar {
+    left: auto !important;
+    right: 0 !important;
+    border-right-width: 0 !important;
+    border-left-width: 1px !important;
+    border-left-color: rgba(243, 244, 246, 1) !important;
+  }
+
+  .dark [dir="rtl"] #adminSidebar,
+  .dark [dir="rtl"] #clientSidebar,
+  [dir="rtl"].dark #adminSidebar,
+  [dir="rtl"].dark #clientSidebar,
+  [dir="rtl"] .dark #adminSidebar,
+  [dir="rtl"] .dark #clientSidebar {
+    border-left-color: rgba(31, 41, 55, 1) !important;
+  }
+
+  [dir="rtl"] .lg\:ml-64,
+  [dir="rtl"] div.lg\:ml-64 {
+    margin-left: 0 !important;
+    margin-right: 16rem !important;
+  }
 }
 
 /* Mobile Table & Scroll Helpers */

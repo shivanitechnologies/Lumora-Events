@@ -141,10 +141,11 @@
           <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
         </button>
 
-        <!-- RTL Toggle -->
-        <button class="rtl-toggle-btn px-2.5 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-semibold text-gray-700 dark:text-[#D6B887]" title="Toggle RTL" aria-label="Toggle RTL">
-          <span class="rtl-label">RTL</span>
-        </button>
+        <!-- Layout Direction Segmented Toggle (LTR / RTL) -->
+        <div class="rtl-segmented-toggle inline-flex items-center p-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700 text-xs font-semibold select-none" title="Toggle Layout Direction (LTR / RTL)">
+          <button type="button" onclick="window.setRTL('ltr')" class="rtl-btn-ltr px-2.5 py-1 rounded-full transition-all duration-200" aria-label="Set Left-to-Right Direction">LTR</button>
+          <button type="button" onclick="window.setRTL('rtl')" class="rtl-btn-rtl px-2.5 py-1 rounded-full transition-all duration-200" aria-label="Set Right-to-Left Direction">RTL</button>
+        </div>
       </div></header>
 
     <!-- Content Body -->
